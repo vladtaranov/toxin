@@ -1,0 +1,14 @@
+mixin textField(options)
+  .text-field__container
+    if options.title
+      label(
+        for=options.name
+        class='text-field__title heading heading--level3') #{options.title}
+
+    input.text-field(
+      id=options.name
+      name=options.name
+      placeholder=options.placeholder
+      value=options.value
+      autofocus=options.autofocus || false
+    )

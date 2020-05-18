@@ -1,0 +1,43 @@
+@import "../../assets/style/constants";
+
+.text-field__container {
+  position: relative;
+}
+
+.text-field__title {
+  margin-bottom: 5px;
+}
+
+.text-field {
+  width: 100%;
+  height: 44px;
+  border: 1px solid $colorDark25;
+  border-radius: 4px;
+  padding: 0 15px;
+  color: $colorDark75;
+
+  &::-webkit-input-placeholder {
+    opacity: 1;
+    color: $colorDark25;
+    transition: opacity $standardTransition;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+    color: $colorDark25;
+    transition: opacity $standardTransition;
+  }
+
+  &:focus {
+    border-color: $colorDark50;
+    transition: all $standardTransition;
+  }
+
+  &:focus::-webkit-input-placeholder {
+    opacity: 0;
+  }
+
+  &:focus::-moz-placeholder {
+    opacity: 0;
+  }
+}

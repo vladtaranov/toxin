@@ -1,0 +1,87 @@
+@import "constants";
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  font-size: 14px;
+  line-height: 1.7;
+  font-family: "montserrat", sans-serif;
+  color: $colorDark75;
+}
+
+.wrapper {
+  min-width: 320px;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 150px;
+}
+
+/* TEXT ELEMENTS */
+
+.heading {
+  font-weight: bold;
+  color: $colorBlack;
+
+  &--level1 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  &--level2 {
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  &--level3 {
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+}
+
+.paragraph {
+  font-size: 14px;
+  line-height: 24px;
+  color: $colorDark75;
+}
+
+.list {
+  & > * {
+    position: relative;
+    margin: 0 0 10px 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: -20px;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background: $colorDark25;
+    }
+  }
+}
+
+/* FONTS */
+
+@font-face {
+  font-family: "montserrat";
+  src:
+    url("../fonts/montserrat-400-normal.woff2") format("woff2"),
+    url("../fonts/montserrat-400-normal.woff") format("woff"),
+    url("../fonts/montserrat-400-normal.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "montserrat";
+  src:
+    url("../fonts/montserrat-700-normal.woff2") format("woff2"),
+    url("../fonts/montserrat-700-normal.woff") format("woff"),
+    url("../fonts/montserrat-700-normal.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}

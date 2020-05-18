@@ -1,0 +1,80 @@
+extends ../../layouts/main/main
+
+include ../../components/text-field/text-field
+
+block var
+  - var pageTitle = 'Colors & Type'
+  - var bodyStyle = 'colors-and-type'
+  -
+    var colors = [
+      {
+        title: 'Dark Shade 100%',
+        description: '#1F2041',
+        styleId: 'black'
+      },
+      {
+        title: 'Dark Shade 75%',
+        description: '#1F2041',
+        styleId: 'dark75'
+      },
+      {
+        title: 'Dark Shade 50%',
+        description: '#1F2041',
+        styleId: 'dark50'
+      },
+      {
+        title: 'Dark Shade 25%',
+        description: '#1F2041',
+        styleId: 'dark25'
+      },
+      {
+        title: 'Dark Shade 5%',
+        description: '#1F2041',
+        styleId: 'dark5'
+      },
+      {
+        title: 'Purple',
+        description: '#BC9CFF',
+        styleId: 'purple'
+      },
+      {
+        title: 'Green',
+        description: '#6FCF97',
+        styleId: 'green'
+      }
+    ]
+
+block header
+  include ../../layouts/header/header
+
+block content
+  .wrapper.colors-and-type__wrapper
+    .colors-and-type__column
+      each color in colors
+        +colorLayout(color)
+
+    .colors-and-type__column
+      .type
+        p.type__tag.type__tag--heading-level1 H1
+        p.type__text.heading.heading--level1 This one is the sub-section or widget title
+
+      .type
+        p.type__tag.type__tag--heading-level2 H2
+        p.type__text.heading.heading--level2 Next one is the item title inside widgets
+
+      .type
+        p.type__tag.type__tag--heading-level3 H3
+        p.type__text.heading.heading--level3 This is a label or CTA text
+
+      .type
+        p.type__tag Body
+        p.type__text.paragraph
+          | This is the body text which is used for most of the design,
+          | like paragraphs, lists, etc.
+
+mixin colorLayout(options)
+  .color
+    div(class='color__sample is-' + options.styleId)
+    .color__caption
+      h2.color__title.heading.heading--level2 #{options.title}
+      p.color__description #{options.description}

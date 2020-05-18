@@ -5,13 +5,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const PATHS = {
-  dev: './src',
-  prod: './dist',
-  assets: './assets'
+  dev: 'src',
+  prod: 'dist',
+  assets: 'assets'
 };
 
-const PAGES_DIR = `${PATHS.dev}/pug/pages`;
+const PAGES_DIR = `./${PATHS.dev}/pages`;
 const PAGES = FS.readdirSync(PAGES_DIR)
+  .map((dir) => FS.readdirSync(`${PAGES_DIR}/${dir}`))
+  .reduce((acc, item) => [...acc, ...item], [])
   .filter((filename) => filename.endsWith('.pug'));
 
 module.exports = (env) => {
@@ -24,8 +26,9 @@ module.exports = (env) => {
       new CleanWebpackPlugin(),
       ...PAGES.map((page) => {
         return new HtmlWebpackPlugin({
-          template: `${PAGES_DIR}/${page}`,
-          filename: `./${page.replace(/\.pug$/, '.html')}`
+          template: `${PAGES_DIR}/${page.replace(/\.pug$/, '')}/${page}`,
+          filename: `./${page.replace(/\.pug$/, '.html')}`,
+          favicon: `./${PATHS.dev}/${PATHS.assets}/favicon/favicon.png`
         })
       })
     ];
@@ -33,7 +36,7 @@ module.exports = (env) => {
     if (isProduction) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: `${PATHS.assets}/styles/main-[hash:5].css`
+          filename: `./${PATHS.assets}/style/main-[hash:5].css`
         })
       );
     }
@@ -46,19 +49,26 @@ module.exports = (env) => {
       isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
       'css-loader',
       'postcss-loader',
-      'sass-loader'
-    ]
+      'resolve-url-loader',
+      {
+        loader: 'sass-loader',
+        options: {
+          sourceMap: true
+        }
+      }
+    ];
   };
 
   return {
     mode: isDevelopment ? 'development' : 'production',
     devtool: isDevelopment ? 'inline-source-map' : 'source-map',
-    entry: `${PATHS.dev}/js/index.js`,
+    entry: `./${PATHS.dev}/index.js`,
     output: {
       path: Path.join(__dirname, PATHS.prod),
       filename: isProduction
-        ? `${PATHS.assets}/js/main-[hash:5].js`
-        : undefined
+        ? `./${PATHS.assets}/js/main-[hash:5].js`
+        : undefined,
+      publicPath: './'
     },
     devServer: {
       contentBase: Path.join(__dirname, PATHS.dev),
@@ -74,7 +84,10 @@ module.exports = (env) => {
         // Loading Pug
         {
           test: /\.pug$/,
-          use: 'pug-loader'
+          use: [
+            'html-loader',
+            'pug-html-loader'
+          ]
         },
 
         // Loading JS
@@ -84,10 +97,20 @@ module.exports = (env) => {
           use: 'babel-loader'
         },
 
-        // Loading styles
+        // Loading style
         {
           test: /\.(sass|scss)$/,
           use: getStyleLoaders()
+        },
+
+        // Loading images
+        {
+          test: /\.(jpg|png|svg)$/,
+          loader: 'file-loader',
+          options: {
+            outputPath: `${PATHS.assets}/images`,
+            name: '[name]-[hash:5].[ext]'
+          }
         },
 
         // Loading fonts
@@ -95,7 +118,8 @@ module.exports = (env) => {
           test: /\.(woff2|woff|ttf)$/,
           loader: 'file-loader',
           options: {
-            outputPath: `${PATHS.assets}/fonts`
+            outputPath: `${PATHS.assets}/fonts`,
+            name: '[name]-[hash:5].[ext]'
           }
         }
       ]

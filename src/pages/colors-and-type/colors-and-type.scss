@@ -1,0 +1,95 @@
+@import "../../assets/style/constants";
+
+.colors-and-type {
+  background: white;
+  margin-bottom: 145px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+  }
+
+  &__column {
+    width: calc(50% - 15px);
+  }
+}
+
+.color {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 19px;
+  line-height: 29px;
+  color: $colorBlack;
+
+  &__sample {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+
+    &.is-black {
+      background: $colorBlack;
+    }
+
+    &.is-dark75 {
+      background: $colorDark75;
+    }
+
+    &.is-dark50 {
+      background: $colorDark50;
+    }
+
+    &.is-dark25 {
+      background: $colorDark25;
+    }
+
+    &.is-dark5 {
+      background: $colorDark5;
+    }
+
+    &.is-purple {
+      background: $colorPurple;
+    }
+
+    &.is-green {
+      background: $colorGreen;
+    }
+  }
+
+  &__caption {
+    margin-left: 40px;
+  }
+}
+
+.type {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 50px;
+
+  &__tag {
+    width: 70px;
+    margin-right: 30px;
+    text-align: right;
+    color: $colorDark25;
+
+    &--heading-level1 {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    &--heading-level2 {
+      font-size: 19px;
+      line-height: 24px;
+    }
+
+    &--heading-level3 {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  &__text {
+    flex: 1;
+  }
+}
