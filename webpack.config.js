@@ -119,7 +119,7 @@ module.exports = (env) => {
           loader: 'file-loader',
           options: {
             outputPath: `${PATHS.assets}/fonts`,
-            publicPath: '/assets/fonts',
+            publicPath: '../fonts',
             name: '[name]-[hash:5].[ext]'
           }
         }
