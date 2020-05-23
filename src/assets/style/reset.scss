@@ -138,7 +138,9 @@ button,
 input,
 optgroup,
 select,
-textarea {
+textarea,
+details,
+summary {
   margin: 0;
   box-shadow: none;
   border: none;
@@ -182,4 +184,8 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }
