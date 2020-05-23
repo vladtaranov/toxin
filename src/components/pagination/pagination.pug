@@ -1,0 +1,16 @@
+mixin pagination(options)
+  .pagination.js__pagination(
+    data-name= options.name
+    data-count= options.itemsCount
+    data-onpage= options.itemsOnPage
+    data-current= options.currentPage
+    data-wordforms= options.wordForms)
+    .pagination__container
+      .pagination__pages.js__pagination-pages
+        //.pagination__page.pagination__page--current 1
+        //.pagination__page 2
+        //.pagination__page.pagination__page--gap ...
+        //.pagination__page 15
+        //.pagination__page.pagination__page--next
+
+      .pagination__caption.js__pagination-caption 1 bgbr

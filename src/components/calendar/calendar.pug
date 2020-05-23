@@ -1,0 +1,29 @@
+mixin calendar(options)
+  .calendar.js__calendar(
+    class= options.style
+    data-name= options.name)
+    .calendar__month
+      .calendar__month-change.icon.js__calendar-previous-month arrow_back
+      .calendar__month-current.heading.heading--level2.js__calendar-month
+      .calendar__month-change.icon.js__calendar-next-month arrow_forward
+
+    .calendar__days-of-week
+      - const daysOfWeek = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
+      each day in daysOfWeek
+        .calendar__day-of-week #{day}
+
+    .calendar__dates.js__calendar-dates
+
+    .calendar__buttons
+      .btn.btn--inline.js__calendar-apply Применить
+      .btn.btn--inline.js__calendar-clear Очистить
+
+    input.js__calendar-start(
+      type='hidden'
+      name=options.name + '-start'
+      value=options.start)
+
+    input.js__calendar-end(
+      type='hidden'
+      name=options.name + '-end'
+      value=options.end)

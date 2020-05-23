@@ -1,0 +1,66 @@
+@import "../../assets/style/constants";
+
+.form-elements {
+  background: white;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    margin-bottom: 130px;
+  }
+
+  &__column {
+    width: calc(100% / 3 - 80px);
+    margin-bottom: 100px;
+  }
+
+  &__subtitle {
+    margin-bottom: 16px;
+  }
+
+  &__narrow-column {
+    width: 266px;
+  }
+
+  &__text-field {
+    margin-bottom: 20px;
+  }
+
+  &__calendar {
+    margin: 40px 0 40px 0;
+  }
+
+  &__toggle {
+    margin-bottom: 14px;
+
+    &--last {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__likes {
+    margin-bottom: 40px;
+  }
+
+  &__like {
+    margin-right: 10px;
+  }
+
+  &__rates {
+    margin-bottom: 40px;
+  }
+
+  &__rate {
+    margin-right: 20px;
+  }
+
+  &__buttons {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    margin-right: 20px;
+  }
+}

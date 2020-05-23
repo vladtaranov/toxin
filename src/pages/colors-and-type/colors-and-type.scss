@@ -2,12 +2,12 @@
 
 .colors-and-type {
   background: white;
-  margin-bottom: 145px;
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
     margin-top: 35px;
+    margin-bottom: 145px;
   }
 
   &__column {

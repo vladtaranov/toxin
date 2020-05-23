@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "montserrat";
+  src:
+    url("../fonts/montserrat-400-normal.woff2") format("woff2"),
+    url("../fonts/montserrat-400-normal.woff") format("woff"),
+    url("../fonts/montserrat-400-normal.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "montserrat";
+  src:
+    url("../fonts/montserrat-700-normal.woff2") format("woff2"),
+    url("../fonts/montserrat-700-normal.woff") format("woff"),
+    url("../fonts/montserrat-700-normal.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "open sans";
+  src:
+    url("../fonts/opensans-700-normal.woff2") format("woff2"),
+    url("../fonts/opensans-700-normal.woff") format("woff"),
+    url("../fonts/opensans-700-normal.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "material icons";
+  src:
+    url("../fonts/materialIcons-regular.woff2") format("woff2"),
+    url("../fonts/materialIcons-regular.woff") format("woff"),
+    url("../fonts/materialIcons-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

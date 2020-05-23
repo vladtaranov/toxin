@@ -1,0 +1,27 @@
+mixin range(options)
+  .range.js__range(
+    data-name= options.name
+    data-min= options.min
+    data-max= options.max
+    data-step= options.step
+    data-start= options.start
+    data-end= options.end
+    data-unit= options.unit)
+    .range__title-and-caption
+      .range__title.heading.heading--level3 #{options.title}
+      .range__caption.js__range-caption
+
+    .range__slider.js__range-slider
+      .range__thumb.js__range-start-thumb
+      .range__gap.js__range-gap
+      .range__thumb.js__range-end-thumb
+
+    input.js__range-start(
+      type="hidden"
+      name= options.name + '-start'
+      value= options.start)
+
+    input.js__range-end(
+      type="hidden"
+      name= options.name + '-end'
+      value= options.end)

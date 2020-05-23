@@ -1,0 +1,9 @@
+mixin checkbox(name, options)
+  label.checkbox
+    input.checkbox__field(
+      type="checkbox"
+      name= name
+      value= options.value
+      checked= options.isChecked)
+
+    .checkbox__title #{options.title}

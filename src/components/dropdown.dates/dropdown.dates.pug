@@ -1,0 +1,14 @@
+mixin dropdownDates(options)
+  .dd-dates.js__dates(
+    data-name= options.calendarName
+    class= options.class)
+    .dd-dates__fields.js__dates-fields
+      .dd-dates__start
+        .dd-dates__title.heading.heading--level3 #{options.startTitle}
+        .dd-dates__field.js__dates-start #{options.startPlaceholder}
+
+      .dd-dates__end
+        .dd-dates__title.heading.heading--level3 #{options.endTitle}
+        .dd-dates__field.js__dates-end #{options.endPlaceholder}
+
+    block

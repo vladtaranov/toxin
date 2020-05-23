@@ -1,14 +1,16 @@
 mixin textField(options)
-  .text-field__container
+  label.text-field(
+    class= options.class)
     if options.title
-      label(
-        for=options.name
-        class='text-field__title heading heading--level3') #{options.title}
+      .text-field__title.heading.heading--level3 #{options.title}
 
-    input.text-field(
-      id=options.name
+    if options.caption
+      .text-field__caption #{options.caption}
+
+    input.text-field__field.js__text-field(
       name=options.name
       placeholder=options.placeholder
       value=options.value
-      autofocus=options.autofocus || false
-    )
+      autofocus=options.autofocus
+      inputmode=options.inputMode || 'text')
+

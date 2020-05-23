@@ -1,0 +1,48 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.checkbox {
+  display: inline-flex;
+  align-items: flex-start;
+
+  &__field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $colorDark25;
+    border-radius: 4px;
+    padding: 0 0 2px 1px;
+    background: white;
+
+    &:checked {
+      border-color: $colorPurple;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 8px;
+        background: $primaryGradient;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 8px;
+        background: white;
+        transform: rotate(45deg) translate(-2px, -2px);
+      }
+    }
+  }
+
+  &__title {
+    margin: 2px 0 0 10px;
+    font-size: 14px;
+    line-height: 18px;
+    color: $colorDark50;
+  }
+}

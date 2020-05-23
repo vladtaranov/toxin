@@ -1,0 +1,142 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.calendar {
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  visibility: hidden;
+  width: 320px;
+  padding: 20px;
+  opacity: 0;
+  background: white;
+  @include borders;
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+    transition: all $standardTransition;
+  }
+
+  &__month {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    &-change {
+      margin: -10px;
+      padding: 10px;
+      font-size: 24px;
+      color: $colorPurple;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        color: $colorDark50;
+        transition: all $standardTransition;
+      }
+    }
+  }
+
+  &__days-of-week,
+  &__week {
+    display: flex;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__day-of-week,
+  &__date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 7);
+    min-width: 40px;
+    height: 40px;
+  }
+
+  &__day-of-week {
+    font-weight: bold;
+    color: $colorPurple;
+  }
+
+  &__date {
+    @mixin gapDayBackground {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      top: 0;
+      bottom: 0;
+      background: $primaryGradient;
+      opacity: .25;
+    }
+
+    position: relative;
+    color: $colorDark25;
+    cursor: pointer;
+    user-select: none;
+
+    &.is-selected-month {
+      color: $colorDark50;
+    }
+
+    &.is-gap-date::after {
+      right: 0;
+      left: 0;
+      @include gapDayBackground;
+    }
+
+    &.is-today,
+    &.is-start-date,
+    &.is-end-date {
+      font-weight: bold;
+      color: white;
+    }
+
+    &.is-today::before,
+    &.is-start-date::before,
+    &.is-end-date::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 20px;
+    }
+
+    &.is-today::before {
+      background: $secondaryGradient !important;
+    }
+
+    &.is-start-date::before,
+    &.is-end-date::before {
+      background: $primaryGradient;
+    }
+
+    &.is-start-date.with-gap-background::after {
+      right: 0;
+      left: 50%;
+      @include gapDayBackground;
+    }
+
+    &.is-end-date.with-gap-background::after {
+      right: 50%;
+      left: 0;
+      @include gapDayBackground;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+
+    & .is-hidden {
+      display: none;
+    }
+  }
+}

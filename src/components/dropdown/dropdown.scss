@@ -1,0 +1,114 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.dropdown {
+  position: relative;
+
+  &__title {
+    margin-bottom: 5px;
+    cursor: default;
+  }
+
+  &__caption {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: default;
+    @include textFieldCaption;
+  }
+
+  &__field {
+    overflow: hidden;
+    cursor: default;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    @include textField;
+
+    &::after {
+      @include expandMore(44px, 24px, $colorDark50);
+    }
+  }
+
+  &__options {
+    position: absolute;
+    z-index: 10;
+    visibility: hidden;
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid $colorDark50;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    padding: 7px 7px 2px 15px;
+    background: white;
+    opacity: 0;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin: 19px 0 11px 0;
+
+    & .is-hidden {
+      display: none;
+    }
+  }
+
+  &.is-open {
+    .dropdown__field {
+      box-shadow: 0 10px 20px $colorDark5;
+      border-radius: 4px 4px 0 0;
+      border-color: $colorDark50;
+      transition: all $standardTransition;
+    }
+
+    .dropdown__options {
+      visibility: visible;
+      box-shadow: 0 10px 20px $colorDark5;
+      opacity: 1;
+      transition: all $standardTransition;
+    }
+  }
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7px;
+
+  &__title {
+    flex: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__change {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $colorDark25;
+    border-radius: 15px;
+    font-size: 18px;
+    line-height: 22px;
+    color: $colorDark25;
+    user-select: none;
+
+    &.is-active {
+      border-color: $colorDark25;
+      color: $colorDark50;
+      cursor: pointer;
+
+      &:hover {
+        transition: $standardTransition;
+      }
+    }
+  }
+
+  &__count {
+    width: 30px;
+    text-align: center;
+  }
+}

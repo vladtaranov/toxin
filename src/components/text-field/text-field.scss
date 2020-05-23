@@ -1,43 +1,52 @@
 @import "../../assets/style/constants";
-
-.text-field__container {
-  position: relative;
-}
-
-.text-field__title {
-  margin-bottom: 5px;
-}
+@import "../../assets/style/mixins";
 
 .text-field {
-  width: 100%;
-  height: 44px;
-  border: 1px solid $colorDark25;
-  border-radius: 4px;
-  padding: 0 15px;
-  color: $colorDark75;
+  position: relative;
+  display: block;
 
-  &::-webkit-input-placeholder {
-    opacity: 1;
-    color: $colorDark25;
-    transition: opacity $standardTransition;
+  &__title {
+    margin-bottom: 5px;
   }
 
-  &::-moz-placeholder {
-    opacity: 1;
-    color: $colorDark25;
-    transition: opacity $standardTransition;
+  &__caption {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include textFieldCaption;
   }
 
-  &:focus {
-    border-color: $colorDark50;
-    transition: all $standardTransition;
+  &__field {
+    @include textField;
+
+    &::-webkit-input-placeholder {
+      opacity: 1;
+      color: $colorDark25;
+      transition: opacity $standardTransition;
+    }
+
+    &::-moz-placeholder {
+      opacity: 1;
+      color: $colorDark25;
+      transition: opacity $standardTransition;
+    }
+
+    &:focus {
+      border-color: $colorDark50;
+      transition: all $standardTransition;
+    }
+
+    &:focus::-webkit-input-placeholder {
+      opacity: 0;
+    }
+
+    &:focus::-moz-placeholder {
+      opacity: 0;
+    }
   }
 
-  &:focus::-webkit-input-placeholder {
-    opacity: 0;
-  }
-
-  &:focus::-moz-placeholder {
-    opacity: 0;
+  &.with-arrow::after {
+    color: $colorPurple;
+    @include arrowForward;
   }
 }

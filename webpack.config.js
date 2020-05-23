@@ -27,7 +27,7 @@ module.exports = (env) => {
       ...PAGES.map((page) => {
         return new HtmlWebpackPlugin({
           template: `${PAGES_DIR}/${page.replace(/\.pug$/, '')}/${page}`,
-          filename: `./${page.replace(/\.pug$/, '.html')}`,
+          filename: page.replace(/\.pug$/, '.html'),
           favicon: `./${PATHS.dev}/${PATHS.assets}/favicon/favicon.png`
         })
       })
@@ -67,8 +67,7 @@ module.exports = (env) => {
       path: Path.join(__dirname, PATHS.prod),
       filename: isProduction
         ? `./${PATHS.assets}/js/main-[hash:5].js`
-        : undefined,
-      publicPath: './'
+        : undefined
     },
     devServer: {
       contentBase: Path.join(__dirname, PATHS.dev),
@@ -119,7 +118,9 @@ module.exports = (env) => {
           loader: 'file-loader',
           options: {
             outputPath: `${PATHS.assets}/fonts`,
-            publicPath: '../fonts',
+            publicPath: isProduction
+              ? '../fonts'
+              : 'assets/fonts',
             name: '[name]-[hash:5].[ext]'
           }
         }

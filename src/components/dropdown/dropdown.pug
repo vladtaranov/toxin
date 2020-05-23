@@ -1,0 +1,43 @@
+mixin dropdown(options)
+  .dropdown.js__dropdown(
+    class= options.class
+    data-name= options.name
+    data-placeholder= options.placeholder
+    data-wordforms= options.wordForms
+    data-summode= options.sumMode
+    data-hasbuttons= options.hasButtons)
+    if options.title
+      .dropdown__title.heading.heading--level3 #{options.title}
+
+    if options.caption
+      .dropdown__caption #{options.caption}
+
+    .dropdown__field.js__dropdown-text-field #{options.placeholder}
+
+    .dropdown__options
+      ul
+        each item in options.values
+          +optionLayout(item)
+
+      if options.hasButtons
+        .dropdown__buttons
+          .dropdown__apply.btn.btn--inline.js__dropdown-apply Применить
+          .dropdown__clear.btn.btn--inline.js__dropdown-clear Очистить
+
+mixin optionLayout(option)
+  li.option
+    .option__title.heading.heading--level3 #{option.title}
+
+    .option__change.js__dropdown-change(
+      data-option= option.name
+      data-action= 'dec') -
+
+    input.option__count.heading.heading--level3.js__dropdown-value(
+      name= option.name
+      value= option.value
+      data-wordforms= option.wordForms
+      readonly)
+
+    .option__change.is-active.js__dropdown-change(
+      data-option= option.name
+      data-action= 'inc') +

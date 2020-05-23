@@ -1,4 +1,5 @@
-@import "constants";
+@import "./constants";
+@import "./mixins";
 
 body {
   display: flex;
@@ -6,8 +7,8 @@ body {
   background: white;
   font-size: 14px;
   line-height: 1.7;
-  font-family: "montserrat", sans-serif;
   color: $colorDark75;
+  @include font("montserrat");
 }
 
 .wrapper {
@@ -26,11 +27,13 @@ body {
   &--level1 {
     font-size: 24px;
     line-height: 30px;
+    @include font("open sans");
   }
 
   &--level2 {
     font-size: 19px;
     line-height: 24px;
+    @include font("open sans");
   }
 
   &--level3 {
@@ -64,24 +67,95 @@ body {
   }
 }
 
-/* FONTS */
+/* BUTTONS */
 
-@font-face {
-  font-family: "montserrat";
-  src:
-    url("../fonts/montserrat-400-normal.woff2") format("woff2"),
-    url("../fonts/montserrat-400-normal.woff") format("woff"),
-    url("../fonts/montserrat-400-normal.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+
+  &--primary,
+  &--secondary,
+  &--action {
+    height: 44px;
+    border: 2px solid transparent;
+    border-radius: 22px;
+    padding: 1px 18px 0 18px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: -2px;
+      border-radius: inherit;
+      background: $primaryGradient;
+    }
+
+    &:hover::before {
+      opacity: .5;
+      transition: all $standardTransition;
+    }
+  }
+
+  &--primary {
+    width: auto;
+    color: white;
+  }
+
+  &--secondary {
+    background: white;
+    background-clip: padding-box;
+    color: $colorPurple;
+  }
+
+  &--inline {
+    margin: -5px;
+    padding: 5px;
+    color: $colorPurple;
+
+    &:hover {
+      color: $colorDark50;
+      transition: all $standardTransition;
+    }
+  }
+
+  &--action {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    color: white;
+
+    &.with-arrow::after {
+      color: white;
+      //@include arrowForward;
+    }
+  }
 }
 
-@font-face {
-  font-family: "montserrat";
-  src:
-    url("../fonts/montserrat-700-normal.woff2") format("woff2"),
-    url("../fonts/montserrat-700-normal.woff") format("woff"),
-    url("../fonts/montserrat-700-normal.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
+/* ICONS */
+
+.icon {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1;
+  font-family: "material icons", sans-serif;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  user-select: none;
 }

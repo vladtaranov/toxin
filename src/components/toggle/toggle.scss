@@ -1,0 +1,45 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.toggle {
+  position: relative;
+  display: inline-flex;
+
+  &__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 20px;
+    border: 1px solid $colorDark25;
+    border-radius: 10px;
+
+    &::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      background: $colorDark25;
+      transition: transform $standardTransition;
+      transform: translateX(4px);
+    }
+
+    &:checked {
+      border-color: $colorPurple;
+
+      &::before {
+        background: $primaryGradient;
+        transition: all $standardTransition;
+        transform: translateX(24px);
+      }
+    }
+  }
+
+  &__title {
+    margin-left: 50px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

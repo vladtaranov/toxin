@@ -148,6 +148,9 @@ textarea {
   font: inherit;
   color: inherit;
   letter-spacing: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 button,

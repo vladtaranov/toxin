@@ -1,0 +1,31 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.rate {
+  display: inline-flex;
+  flex-direction: row-reverse;
+
+  &__symbol {
+    &::before {
+      content: "star_border";
+      background: $primaryGradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 24px;
+      line-height: 20px;
+      cursor: pointer;
+    }
+
+    &:checked::before,
+    &:checked ~ &::before {
+      content: "star";
+      transition: all $standardTransition;
+    }
+
+    &:hover,
+    &:hover ~ & {
+      opacity: .5;
+      transition: all $standardTransition;
+    }
+  }
+}

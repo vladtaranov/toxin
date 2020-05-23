@@ -1,0 +1,18 @@
+mixin rate(options)
+  .rate(class= options.class)
+
+    - const values = [1, 2, 3, 4, 5].reverse()
+    - const defaultValue = options.defaultValue || 5
+    each value in values
+      +rateSymbol({
+        name: options.name,
+        value,
+        isChecked: value === defaultValue
+      })
+
+mixin rateSymbol(symbolOptions)
+  input.rate__symbol.icon(
+    type="radio"
+    name= symbolOptions.name
+    value= symbolOptions.value
+    checked= symbolOptions.isChecked)

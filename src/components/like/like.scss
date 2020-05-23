@@ -1,0 +1,62 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.like {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  border: 1px solid $colorDark25;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  user-select: none;
+
+  &__symbol {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 18px;
+
+    &::before {
+      content: "favorite_border";
+      font-size: 10px;
+      line-height: 9px;
+      color: $colorDark25;
+    }
+  }
+
+  &__count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 26px;
+    height: 19px;
+    font-size: 10px;
+    line-height: 19px;
+    text-align: center;
+    color: $colorDark25;
+  }
+
+  &:hover {
+    opacity: .5;
+    transition: all $standardTransition;
+  }
+}
+
+.like.is-active {
+  border-color: $colorPurple;
+
+  .like__symbol::before {
+    content: "favorite";
+    color: $colorPurple;
+  }
+
+  .like__count {
+    color: $colorPurple;
+  }
+}

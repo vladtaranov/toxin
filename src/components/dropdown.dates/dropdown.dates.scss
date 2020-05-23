@@ -1,0 +1,38 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.dd-dates {
+  position: relative;
+
+  &__fields {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__start,
+  &__end {
+    width: calc(100% / 2 - 10px);
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    cursor: default;
+  }
+
+  &__field {
+    position: relative;
+    cursor: default;
+    @include textField;
+
+    &::after {
+      @include expandMore(44px, 24px, $colorDark50);
+    }
+  }
+
+  &__calendar {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    left: 0;
+  }
+}

@@ -46,5 +46,10 @@
   "browserslist": [
     "last 2 chrome versions",
     "last 2 firefox versions"
-  ]
+  ],
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "lodash.chunk": "^4.2.0",
+    "lodash.isequal": "^4.5.0"
+  }
 }
