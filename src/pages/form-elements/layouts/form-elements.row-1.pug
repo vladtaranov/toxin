@@ -1,0 +1,238 @@
+include ../../components/text-field/text-field
+include ../../components/calendar/calendar
+include ../../components/dropdown/dropdown
+include ../../components/dropdown.dates/dropdown.dates.pug
+include ../../components/dropdown.dates-filter/dropdown.dates-filter.pug
+include ../../components/range/range
+include ../../components/toggle/toggle
+include ../../components/rate/rate
+include ../../components/like/like
+include ../../components/pagination/pagination
+include ../../components/checkbox/checkbox
+
+.form-elements__column
+  +textField({
+    class: 'form-elements__text-field',
+    name: 'text-field--default',
+    title: 'Text field',
+    caption: 'Default',
+    placeholder: 'Email',
+    inputMode: 'email'
+  })
+
+  +textField({
+    class: 'form-elements__text-field',
+    name: 'text-field--focused',
+    title: 'Text field',
+    caption: 'Hover / Focus',
+    placeholder: 'Text field',
+    value: 'This is pretty awesome'
+  })
+
+  +dropdown({
+    class: 'form-elements__text-field',
+    name: 'dropdown--visitors',
+    title: 'Dropdown',
+    caption: 'Default',
+    placeholder: 'Сколько гостей',
+    values: [
+      {name: 'adults', title: 'Взрослые', value: 0},
+      {name: 'children', title: 'Дети', value: 0},
+      {name: 'infants', title: 'Младенцы', value: 0}
+    ],
+    sumMode: 'all',
+    wordForms: 'гость, гостя, гостей',
+    hasButtons: true
+  })
+
+  +textField({
+    class: 'form-elements__text-field',
+    name: 'text-field--masked',
+    title: 'Masked Text field',
+    caption: 'Default',
+    placeholder: 'ДД.ММ.ГГГГ',
+    inputMode: 'number'
+  })
+
+  +dropdownDates({
+    class: 'form-elements__calendar',
+    calendarName: 'calendar',
+    startTitle: 'Date Dropdown',
+    endTitle: 'Date Dropdown',
+    startPlaceholder: 'ДД.ММ.ГГГГ',
+    endPlaceholder: 'ДД.ММ.ГГГГ'
+  })
+
+    +calendar({
+      name: 'calendar',
+      style: 'dd-dates__calendar',
+      end: '2020-5-19'
+    })
+
+  .form-elements__narrow-column
+
+    +dropdownDatesFilter({
+      class: 'form-elements__calendar',
+      calendarName: 'calendar-2',
+      title: 'Filter Date Dropdown',
+      placeholder: 'Выберите даты'
+    })
+
+      +calendar({
+        name: 'calendar-2',
+        style: 'dd-dates-filter__calendar',
+        start: '2020-5-19',
+        end: '2020-5-23'
+      })
+
+    +textField({
+      class: 'form-elements__subscription with-arrow',
+      name: 'text-field--subscription',
+      title: 'Subscription Text field',
+      placeholder: 'Email',
+      inputMode: 'email'
+    })
+
+
+
+
+
+.form-elements__column
+
+  h3.form-elements__subtitle.heading.heading--level3 Toggle
+
+  +toggle({
+    class: 'form-elements__toggle',
+    name: 'toggles',
+    value: 'toggle-1',
+    title: 'Получать спецпредложения',
+    isChecked: true
+  })
+
+  +toggle({
+    class: 'form-elements__toggle--last',
+    name: 'toggles',
+    value: 'toggle-2',
+    title: 'Получать спецпредложения',
+    isChecked: false
+  })
+
+  h3.form-elements__subtitle.heading.heading--level3 Like Button
+
+  .form-elements__likes
+    +like({
+      class: 'form-elements__like',
+      name: 'like--inactive',
+      likesCount: 2,
+      isLiked: false
+    })
+
+    +like({
+      class: 'form-elements__like',
+      name: 'like--active',
+      likesCount: 12,
+      isLiked: true
+    })
+
+  h3.form-elements__subtitle.heading.heading--level3 Rate Button
+
+  .form-elements__rates
+    +rate({
+      class: 'form-elements__rate',
+      name: 'rate--4stars',
+      defaultValue: 4
+    })
+
+    +rate({
+      class: 'form-elements__rate',
+      name: 'rate--default'
+    })
+
+
+
+  +dropdown({
+    name: 'dropdown--advantages',
+    title: 'Dropdown',
+    caption: 'Expanded',
+    placeholder: 'Выберите удобства',
+    values: [
+      {
+        name: 'bedrooms', title: 'Спальни',
+        wordForms: 'спальня, спальни, спален', value: 2
+      },
+      {
+        name: 'beds', title: 'Кровати',
+        wordForms: 'кровать, кровати, кроватей', value: 2
+      },
+      {
+        name: 'bathrooms', title: 'Ванные комнаты',
+        wordForms: 'ванная комната, ванные комнаты, ванных комнат', value: 0
+      }
+    ],
+    sumMode: 'byCategory'
+  })
+
+
+
+
+
+
+.form-elements__column
+
+  h3.form-elements__subtitle.heading.heading--level3 Buttons
+
+  .form-elements__buttons
+    .form-elements__button.btn.btn--primary Click me
+    .form-elements__button.btn.btn--primary Click me
+
+  .form-elements__buttons
+    .form-elements__button.btn.btn--secondary Click me
+    .form-elements__button.btn.btn--secondary Click me
+
+  .form-elements__buttons
+    .form-elements__button
+      .btn.btn--inline Click me
+    .form-elements__button
+      .btn.btn--inline Click me
+
+  .form-elements__buttons
+    .btn.btn--action.with-arrow Перейти к оплате
+
+  //+range({
+  //  name: 'range-slider',
+  //  title: 'Range Slider',
+  //  min: 0,
+  //  max: 15000,
+  //  step: 100,
+  //  start: 5000,
+  //  end: 10000,
+  //  unit: '₽'
+  //})
+  //
+  //+range({
+  //  name: 'range-slider-2',
+  //  title: 'Range Slider',
+  //  min: 100,
+  //  max: 200,
+  //  step: 1,
+  //  start: 110,
+  //  end: 200,
+  //  unit: '₽'
+  //})
+
+
+
+  ul.list
+    li Нельзя с&nbsp;питомцами
+    li Без&nbsp;вечеринок и&nbsp;мероприятий
+    li Время прибытия&nbsp;&mdash; после 13:00, выезд&nbsp;&mdash; до&nbsp;12:00
+
+
+
+  +pagination({
+    name: 'pagination',
+    itemsCount: 172,
+    itemsOnPage: 12,
+    currentPage: 1,
+    wordForms: 'варианта аренды, вариантов аренды, вариантов аренды'
+  })
