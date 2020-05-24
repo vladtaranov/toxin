@@ -1,0 +1,38 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.radio {
+  display: inline-flex;
+  color: $colorDark50;
+
+  &__field {
+    position: relative;
+    top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 1px solid $colorDark25;
+    border-radius: 10px;
+    background: white;
+
+    &:checked {
+      border-color: $colorPurple;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 12px;
+        background: $primaryGradient;
+      }
+
+      & + .radio__title {
+        color: $colorDark75;
+      }
+    }
+  }
+}

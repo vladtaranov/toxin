@@ -10,6 +10,7 @@ import '../../components/dropdown.dates-filter/dropdown.dates-filter.scss';
 import '../../components/range/range.scss';
 import '../../components/checkbox/checkbox.scss';
 import '../../components/checkbox.rich/checkbox.rich.scss';
+import '../../components/radio/radio.scss';
 import '../../components/toggle/toggle.scss';
 import '../../components/rate/rate.scss';
 import '../../components/like/like.scss';
