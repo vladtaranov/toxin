@@ -16,6 +16,18 @@ body {
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 140px;
+
+  @media screen and (max-width: $smallDesktopBreakpoint) {
+    padding: 0 64px;
+  }
+
+  @media screen and (max-width: $tabletBreakpoint) {
+    padding: 0 32px;
+  }
+
+  @media screen and (max-width: $mobileBreakpoint) {
+    padding: 0 16px;
+  }
 }
 
 /* TEXT ELEMENTS */

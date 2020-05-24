@@ -1,0 +1,19 @@
+@import "../../assets/style/constants";
+
+.cards {
+  background: #e5e5e5;
+
+  /* GENERAL */
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 35px;
+    margin-bottom: 30px;
+  }
+
+  &__column {
+    width: calc(100% / 3 - 200px / 3);
+  }
+}

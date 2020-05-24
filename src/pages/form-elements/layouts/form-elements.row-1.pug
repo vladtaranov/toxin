@@ -232,10 +232,11 @@ include ../../../components/pagination/pagination
 
   h3.form-elements__subtitle.heading.heading--level3 Pagination
 
-  +pagination({
-    name: 'pagination',
-    itemsCount: 172,
-    itemsOnPage: 12,
-    currentPage: 1,
-    wordForms: 'варианта аренды, вариантов аренды, вариантов аренды'
-  })
+  .form-elements__pagination
+    +pagination({
+      name: 'pagination',
+      itemsCount: 172,
+      itemsOnPage: 12,
+      currentPage: 1,
+      wordForms: 'варианта аренды, вариантов аренды, вариантов аренды'
+    })

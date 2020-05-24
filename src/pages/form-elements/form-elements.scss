@@ -18,16 +18,41 @@
 
     &--wide {
       width: calc(100% / 3 * 2 - 182px / 3);
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        width: 100%;
+      }
     }
 
     &:nth-child(2),
     &:nth-child(5),
     &:nth-child(8) {
       margin-left: 52px;
+
+      @media screen and (max-width: $smallDesktopBreakpoint) {
+        margin-left: 0;
+      }
     }
 
     &.with-wide-margin {
       margin-bottom: 102px;
+
+      @media screen and (max-width: $smallDesktopBreakpoint) {
+        margin-bottom: 41px;
+      }
+    }
+
+    @media screen and (max-width: $smallDesktopBreakpoint) {
+      width: calc(100% / 2 - 50px);
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: $tabletBreakpoint) {
+      width: calc(100% / 2 - 20px);
+    }
+
+    @media screen and (max-width: $mobileBreakpoint) {
+      width: 100%;
     }
   }
 
@@ -38,6 +63,10 @@
   &__narrow-column {
     width: 100%;
     max-width: 266px;
+
+    @media screen and (max-width: $tabletBreakpoint) {
+      max-width: 100%;
+    }
   }
 
   /* ROW 1 */
@@ -111,6 +140,12 @@
     }
   }
 
+  &__pagination {
+    @media screen and (max-width: $smallDesktopBreakpoint) {
+      margin-bottom: 31px;
+    }
+  }
+
   /* ROW 2 */
 
   &__dropdown {
@@ -132,6 +167,10 @@
 
     &:last-child {
       margin-bottom: -23px;
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        margin-bottom: 0;
+      }
     }
   }
 
