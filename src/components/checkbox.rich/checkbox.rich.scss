@@ -1,7 +1,7 @@
 @import "../../assets/style/constants";
 @import "../../assets/style/mixins";
 
-.checkbox {
+.checkbox-rich {
   display: inline-flex;
   align-items: flex-start;
 
@@ -10,11 +10,20 @@
     @include checkboxField;
   }
 
-  &__title {
+  &__title-and-caption {
     flex: 1;
-    margin: 2px 0 0 0;
+  }
+
+  &__title {
+    margin: 2px 0 5px 0;
     font-size: 14px;
     line-height: 18px;
+    color: $colorDark75;
+  }
+
+  &__caption {
+    font-size: 12px;
+    line-height: 14px;
     color: $colorDark50;
   }
 }

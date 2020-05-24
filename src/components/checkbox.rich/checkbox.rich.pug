@@ -1,0 +1,12 @@
+mixin checkboxRich(options)
+  div(class= options.class)
+    label.checkbox-rich
+      input.checkbox-rich__field(
+        type="checkbox"
+        name= options.name
+        value= options.value
+        checked= options.isChecked)
+
+      .checkbox-rich__title-and-caption
+        .checkbox-rich__title.heading.heading--level4 #{options.title}
+        .checkbox-rich__caption #{options.caption}
