@@ -6,19 +6,18 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    margin-top: 35px;
-    margin-bottom: 145px;
+    margin: 35px 10px 145px 10px;
   }
 
   &__column {
-    width: calc(50% - 15px);
+    width: calc(50% - 92px);
   }
 }
 
 .color {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 21px;
   font-size: 19px;
   line-height: 29px;
   color: $colorBlack;
