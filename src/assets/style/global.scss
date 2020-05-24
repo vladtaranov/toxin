@@ -144,11 +144,13 @@ body {
     width: 100%;
     text-align: center;
     color: white;
+  }
 
-    &.with-arrow::after {
-      color: white;
-      //@include arrowForward;
-    }
+  &__arrow-forward::after {
+    z-index: 1;
+    font-family: "material icons", sans-serif;
+    color: white;
+    @include arrowForward;
   }
 }
 
