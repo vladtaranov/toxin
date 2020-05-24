@@ -5,17 +5,21 @@ include ../../../components/review/review
 
 .form-elements__column.with-wide-margin
 
-  +advantage({
-    icon: 'face',
-    title: 'Комфорт',
-    caption: 'Шумопоглащающие стены'
-  })
+  .form-elements__advantages
 
-  +advantage({
-    icon: 'city',
-    title: 'Удобство',
-    caption: 'Окно в каждой из спален'
-  })
+    +advantage({
+      class: 'form-elements__advantage',
+      icon: 'face',
+      title: 'Комфорт',
+      caption: 'Шумопоглащающие стены'
+    })
+
+    +advantage({
+      class: 'form-elements__advantage',
+      icon: 'city',
+      title: 'Удобство',
+      caption: 'Окно в каждой из спален'
+    })
 
 
 
