@@ -52,6 +52,7 @@
   font-size: $fontSize;
   font-family: "material icons", sans-serif;
   color: $color;
+  pointer-events: none;
 }
 
 @mixin arrowForward {
