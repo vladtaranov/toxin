@@ -1,0 +1,96 @@
+include ../../../components/details/details
+include ../../../components/checkbox/checkbox
+include ../../../components/checkbox.rich/checkbox.rich.pug
+
+// COLUMN LEFT
+
+.form-elements__column.with-wide-margin
+
+  .form-elements__narrow-column
+
+    // EXPANDABLE LISTS
+
+    -
+      const expandableCheckboxes = [
+      { name: 'services', value: 'breakfast', title: 'Завтрак' },
+      { name: 'services', value: 'writing-table', title: 'Письменный стол', isChecked: true },
+      { name: 'services', value: 'feeding-chair', title: 'Стул для кормления', isChecked: true },
+      { name: 'services', value: 'crib', title: 'Кроватка', isChecked: true },
+      { name: 'services', value: 'tv', title: 'Телевизор' },
+      { name: 'services', value: 'shampoo', title: 'Шампунь' }
+      ]
+
+    +details({
+      class: 'form-elements__details',
+      title: 'Expandable Checkbox List'
+    })
+
+      each closedCheckbox in expandableCheckboxes
+        +checkbox({
+          class: 'form-elements__checkbox',
+          name: closedCheckbox.name,
+          value: closedCheckbox.value,
+          title: closedCheckbox.title,
+          isChecked: closedCheckbox.isChecked
+        })
+
+    +details({
+      class: 'form-elements__details',
+      title: 'Expandable Checkbox List',
+      isOpen: true
+    })
+
+      each openCheckbox in expandableCheckboxes
+        +checkbox({
+          class: 'form-elements__checkbox',
+          name: openCheckbox.name,
+          value: openCheckbox.value,
+          title: openCheckbox.title,
+          isChecked: openCheckbox.isChecked
+        })
+
+
+
+// COLUMN MIDDLE
+
+.form-elements__column
+
+  // RICH CHECKBOXES
+
+  h3.form-elements__subtitle.heading.heading--level3 Rich Checkbox Buttons
+
+  -
+    const richCheckboxes = [
+      { name: 'rich-checkboxes', value: 'wide-corridor',
+      title: 'Широкий коридор',
+      caption: 'Ширина коридоров в номере не менее 91 см', isChecked: false },
+      { name: 'rich-checkboxes', value: 'disabled-assistant',
+      title: 'Помощник для инвалидов',
+      caption: 'На 1 этаже вас встретит специалист и проводит до номера', isChecked: false }
+    ]
+
+  .form-elements__checkboxes
+    each richCheckbox in richCheckboxes
+      +checkboxRich({
+        class: 'form-elements__checkbox-rich',
+        name: richCheckbox.name,
+        value: richCheckbox.value,
+        title: richCheckbox.title,
+        caption: richCheckbox.caption,
+        isChecked: richCheckbox.isChecked
+      })
+
+
+
+// COLUMN RIGHT
+
+.form-elements__column
+
+  // LIST
+
+  h3.form-elements__subtitle.heading.heading--level3 Bullet List
+
+  ul.list
+    li Нельзя с&nbsp;питомцами
+    li Без&nbsp;вечеринок и&nbsp;мероприятий
+    li Время прибытия&nbsp;&mdash; после 13:00, выезд&nbsp;&mdash; до&nbsp;12:00

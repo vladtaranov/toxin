@@ -1,0 +1,27 @@
+include ../../../components/review/review
+
+// COLUMN LEFT
+
+.form-elements__column.with-wide-margin
+
+
+
+
+
+
+// COLUMN RIGHT
+
+.form-elements__column--wide
+
+  +review({
+    class: 'form-elements__review',
+    id: 1,
+    name: 'Мурад Сарафанов',
+    date: '5 дней назад',
+    photo: '../../assets/images/reviews/murad.jpg',
+    text: `Великолепный матрас на кровате в основной спальне! А пуфик вообще потрясающий.
+      И стены действительно шумоподавляющие. Выкрикивал комплименты повару &mdash;
+      никто не жаловался из соседей`,
+    likesCount: 12,
+    isLiked: 'true'
+  })

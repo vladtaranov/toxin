@@ -1,0 +1,29 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.review {
+  color: $colorDark75;
+
+  &__person,
+  &__review {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__photo {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    box-shadow: 0 10px 20px rgba($colorBlack, .1);
+    border: 2px solid white;
+    border-radius: 24px;
+  }
+
+  &__name {
+  }
+
+  &__like {
+    display: flex;
+    justify-content: center;
+  }
+}

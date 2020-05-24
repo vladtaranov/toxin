@@ -15,7 +15,14 @@
 
   &__column {
     width: calc(100% / 3 - 80px);
-    margin-bottom: 100px;
+
+    &--wide {
+      width: calc(100% / 3 * 2 - 80px);
+    }
+
+    &.with-wide-margin {
+      margin-bottom: 100px;
+    }
   }
 
   &__subtitle {
@@ -89,5 +96,25 @@
 
   &__button {
     margin-right: 20px;
+  }
+
+  /* ROW 2 */
+
+  &__dropdown {
+    margin-bottom: 20px;
+
+    &--is-open {
+      margin-bottom: 165px;
+    }
+  }
+
+  &__details {
+    margin-bottom: 30px;
+  }
+
+  /* ROW 3 */
+
+  &__checkbox-rich {
+    margin-bottom: 10px;
   }
 }

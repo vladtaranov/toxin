@@ -1,0 +1,19 @@
+include ../like/like
+
+mixin review(options)
+  .review(class= options.class)
+    .review__person
+      img.review__photo(
+        src= options.photo
+        alt="")
+      .review__name.heading.heading--level4 #{options.name}
+      .review__date #{options.date}
+
+    .review__review
+      .review__like
+        +like({
+          name: `review-${options.id}`,
+          likesCount: options.likesCount,
+          isLiked: options.isLiked
+        })
+      .review__text #{options.text}

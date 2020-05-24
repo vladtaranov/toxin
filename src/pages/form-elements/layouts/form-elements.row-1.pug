@@ -13,7 +13,7 @@ include ../../../components/pagination/pagination
 
 // COLUMN LEFT
 
-.form-elements__column
+.form-elements__column.with-wide-margin
 
   +textField({
     class: 'form-elements__text-field',
@@ -109,10 +109,8 @@ include ../../../components/pagination/pagination
 
   -
     const checkboxes = [
-      { name: 'checkboxes', value: 'smoking',
-        title: 'Можно курить' },
-      { name: 'checkboxes', value: 'pets',
-        title: 'Можно с питомцами', isChecked: true },
+      { name: 'checkboxes', value: 'smoking', title: 'Можно курить' },
+      { name: 'checkboxes', value: 'pets', title: 'Можно с питомцами', isChecked: true },
       { name: 'checkboxes', value: 'visitors',
         title: 'Можно пригласить гостей (до 10 человек)', isChecked: true }
     ]

@@ -5,7 +5,7 @@
   position: relative;
 
   &::after {
-    top: -15px;
+    top: -10px;
     transition: all $standardTransition;
     @include expandMore(44px, 24px, $colorDark50);
   }
@@ -16,10 +16,11 @@
   }
 
   &__title {
+    padding: 5px 0;
     cursor: pointer;
   }
 
   &__items {
-    padding: 16px 0 0 0;
+    padding: 11px 0 0 0;
   }
 }
