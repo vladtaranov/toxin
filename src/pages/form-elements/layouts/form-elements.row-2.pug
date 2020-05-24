@@ -1,0 +1,87 @@
+include ../../../components/details/details
+include ../../../components/checkbox/checkbox
+include ../../../components/checkbox.rich/checkbox.rich.pug
+
+.form-elements__column
+
+  +details({
+    title: 'Expandable Checkbox List',
+    isOpen: true
+  })
+    -
+      const checkboxes = [
+        { name: 'services', value: 'breakfast',
+          title: 'Завтрак', isChecked: false },
+        { name: 'services', value: 'writing-table',
+          title: 'Письменный стол', isChecked: true },
+        { name: 'services', value: 'feeding-chair',
+          title: 'Стул для кормления', isChecked: true },
+        { name: 'services', value: 'crib',
+          title: 'Кроватка', isChecked: true },
+        { name: 'services', value: 'tv',
+          title: 'Телевизор', isChecked: false },
+        { name: 'services', value: 'shampoo',
+          title: 'Шампунь', isChecked: false }
+      ]
+
+    each checkbox in checkboxes
+      +checkbox({
+        class: 'form-elements__checkbox',
+        name: checkbox.name,
+        value: checkbox.value,
+        title: checkbox.title,
+        isChecked: checkbox.isChecked
+      })
+
+.form-elements__column
+
+  h3.form-elements__subtitle.heading.heading--level3 Rich Checkbox Buttons
+
+  -
+    const richCheckboxes = [
+      { name: 'rich-checkboxes', value: 'wide-corridor',
+        title: 'Широкий коридор',
+        caption: 'Ширина коридоров в номере не менее 91 см', isChecked: false },
+      { name: 'rich-checkboxes', value: 'disabled-assistant',
+        title: 'Помощник для инвалидов',
+        caption: 'На 1 этаже вас встретит специалист и проводит до номера', isChecked: false }
+    ]
+
+  .form-elements__checkboxes
+    each richCheckbox in richCheckboxes
+      +checkboxRich({
+        class: 'form-elements__checkbox',
+        name: richCheckbox.name,
+        value: richCheckbox.value,
+        title: richCheckbox.title,
+        caption: richCheckbox.caption,
+        isChecked: richCheckbox.isChecked
+      })
+
+    +dropdown({
+      name: 'dropdown--advantages',
+      title: 'Dropdown',
+      caption: 'Expanded',
+      placeholder: 'Выберите удобства',
+      values: [
+        {
+          name: 'bedrooms', title: 'Спальни',
+          wordForms: 'спальня, спальни, спален', value: 2
+        },
+        {
+          name: 'beds', title: 'Кровати',
+          wordForms: 'кровать, кровати, кроватей', value: 2
+        },
+        {
+          name: 'bathrooms', title: 'Ванные комнаты',
+          wordForms: 'ванная комната, ванные комнаты, ванных комнат', value: 0
+        }
+      ],
+      sumMode: 'byCategory'
+    })
+
+
+    ul.list
+      li Нельзя с&nbsp;питомцами
+      li Без&nbsp;вечеринок и&nbsp;мероприятий
+      li Время прибытия&nbsp;&mdash; после 13:00, выезд&nbsp;&mdash; до&nbsp;12:00

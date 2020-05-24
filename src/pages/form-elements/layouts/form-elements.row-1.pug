@@ -1,16 +1,20 @@
-include ../../components/text-field/text-field
-include ../../components/calendar/calendar
-include ../../components/dropdown/dropdown
-include ../../components/dropdown.dates/dropdown.dates.pug
-include ../../components/dropdown.dates-filter/dropdown.dates-filter.pug
-include ../../components/range/range
-include ../../components/toggle/toggle
-include ../../components/rate/rate
-include ../../components/like/like
-include ../../components/pagination/pagination
-include ../../components/checkbox/checkbox
+include ../../../components/text-field/text-field
+include ../../../components/calendar/calendar
+include ../../../components/dropdown/dropdown
+include ../../../components/dropdown.dates/dropdown.dates.pug
+include ../../../components/dropdown.dates-filter/dropdown.dates-filter.pug
+include ../../../components/checkbox/checkbox
+include ../../../components/radio/radio
+include ../../../components/toggle/toggle
+include ../../../components/like/like
+include ../../../components/rate/rate
+include ../../../components/range/range
+include ../../../components/pagination/pagination
+
+// COLUMN LEFT
 
 .form-elements__column
+
   +textField({
     class: 'form-elements__text-field',
     name: 'text-field--default',
@@ -95,9 +99,57 @@ include ../../components/checkbox/checkbox
 
 
 
-
+// COLUMN MIDDLE
 
 .form-elements__column
+
+  // CHECKBOXES
+
+  h3.form-elements__subtitle.heading.heading--level3 Checkbox Buttons
+
+  -
+    const checkboxes = [
+      { name: 'checkboxes', value: 'smoking',
+        title: 'Можно курить' },
+      { name: 'checkboxes', value: 'pets',
+        title: 'Можно с питомцами', isChecked: true },
+      { name: 'checkboxes', value: 'visitors',
+        title: 'Можно пригласить гостей (до 10 человек)', isChecked: true }
+    ]
+
+  .form-elements__checkboxes
+    each checkbox in checkboxes
+      +checkbox({
+        class: 'form-elements__checkbox',
+        name: checkbox.name,
+        value: checkbox.value,
+        title: checkbox.title,
+        isChecked: checkbox.isChecked
+      })
+
+  // RADIOS
+
+  h3.form-elements__subtitle.heading.heading--level3 Radio Buttons
+
+  -
+    const radios = [
+      { name: 'gender', value: 'male',
+      title: 'Мужчина', isChecked: true },
+      { name: 'gender', value: 'female',
+      title: 'Женщина' }
+    ]
+
+  .form-elements__radios
+    each radio in radios
+      +radio({
+        class: 'form-elements__radio',
+        name: radio.name,
+        value: radio.value,
+        title: radio.title,
+        isChecked: radio.isChecked
+      })
+
+  // TOGGLES
 
   h3.form-elements__subtitle.heading.heading--level3 Toggle
 
@@ -113,9 +165,10 @@ include ../../components/checkbox/checkbox
     class: 'form-elements__toggle--last',
     name: 'toggles',
     value: 'toggle-2',
-    title: 'Получать спецпредложения',
-    isChecked: false
+    title: 'Получать спецпредложения'
   })
+
+  // LIKES
 
   h3.form-elements__subtitle.heading.heading--level3 Like Button
 
@@ -123,16 +176,17 @@ include ../../components/checkbox/checkbox
     +like({
       class: 'form-elements__like',
       name: 'like--inactive',
-      likesCount: 2,
-      isLiked: false
+      likesCount: 2
     })
 
     +like({
       class: 'form-elements__like',
       name: 'like--active',
       likesCount: 12,
-      isLiked: true
+      isLiked: 'true'
     })
+
+  // RATES
 
   h3.form-elements__subtitle.heading.heading--level3 Rate Button
 
@@ -150,34 +204,11 @@ include ../../components/checkbox/checkbox
 
 
 
-  +dropdown({
-    name: 'dropdown--advantages',
-    title: 'Dropdown',
-    caption: 'Expanded',
-    placeholder: 'Выберите удобства',
-    values: [
-      {
-        name: 'bedrooms', title: 'Спальни',
-        wordForms: 'спальня, спальни, спален', value: 2
-      },
-      {
-        name: 'beds', title: 'Кровати',
-        wordForms: 'кровать, кровати, кроватей', value: 2
-      },
-      {
-        name: 'bathrooms', title: 'Ванные комнаты',
-        wordForms: 'ванная комната, ванные комнаты, ванных комнат', value: 0
-      }
-    ],
-    sumMode: 'byCategory'
-  })
-
-
-
-
-
+// COLUMN RIGHT
 
 .form-elements__column
+
+  // BUTTONS
 
   h3.form-elements__subtitle.heading.heading--level3 Buttons
 
@@ -195,39 +226,13 @@ include ../../components/checkbox/checkbox
     .form-elements__button
       .btn.btn--inline Click me
 
-  .form-elements__buttons
-    .btn.btn--action.with-arrow Перейти к оплате
+  .form-elements__buttons--last
+    .btn.btn--action Перейти к оплате
+    .btn__arrow-forward
 
-  //+range({
-  //  name: 'range-slider',
-  //  title: 'Range Slider',
-  //  min: 0,
-  //  max: 15000,
-  //  step: 100,
-  //  start: 5000,
-  //  end: 10000,
-  //  unit: '₽'
-  //})
-  //
-  //+range({
-  //  name: 'range-slider-2',
-  //  title: 'Range Slider',
-  //  min: 100,
-  //  max: 200,
-  //  step: 1,
-  //  start: 110,
-  //  end: 200,
-  //  unit: '₽'
-  //})
+  // PAGINATION
 
-
-
-  ul.list
-    li Нельзя с&nbsp;питомцами
-    li Без&nbsp;вечеринок и&nbsp;мероприятий
-    li Время прибытия&nbsp;&mdash; после 13:00, выезд&nbsp;&mdash; до&nbsp;12:00
-
-
+  h3.form-elements__subtitle.heading.heading--level3 Pagination
 
   +pagination({
     name: 'pagination',
