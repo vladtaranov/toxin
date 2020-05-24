@@ -16,7 +16,10 @@
   }
 
   &__title {
-    padding: 5px 0;
+    overflow: hidden;
+    padding: 5px 44px 5px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     cursor: pointer;
   }
 
