@@ -1,6 +1,8 @@
 mixin dropdown(options)
+  - const style = `${options.class} ${options.isOpenForced && 'is-open--forced'}`
+
   .dropdown.js__dropdown(
-    class= options.class
+    class= style
     data-name= options.name
     data-placeholder= options.placeholder
     data-wordforms= options.wordForms
@@ -12,7 +14,8 @@ mixin dropdown(options)
     if options.caption
       .dropdown__caption #{options.caption}
 
-    .dropdown__field.js__dropdown-text-field #{options.placeholder}
+    .dropdown__field
+      .dropdown__field-text.js__dropdown-text-field #{options.placeholder}
 
     .dropdown__options
       ul

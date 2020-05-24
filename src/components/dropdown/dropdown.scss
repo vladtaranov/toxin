@@ -18,11 +18,15 @@
   }
 
   &__field {
-    overflow: hidden;
     cursor: default;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     @include textField;
+
+    &-text {
+      margin-right: 29px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
 
     &::after {
       @include expandMore(44px, 24px, $colorDark50);
@@ -54,7 +58,8 @@
     }
   }
 
-  &.is-open {
+  &.is-open,
+  &.is-open--forced {
     .dropdown__field {
       box-shadow: 0 10px 20px $colorDark5;
       border-radius: 4px 4px 0 0;
@@ -68,6 +73,10 @@
       opacity: 1;
       transition: all $standardTransition;
     }
+  }
+
+  &.is-open--forced {
+    z-index: 9;
   }
 }
 

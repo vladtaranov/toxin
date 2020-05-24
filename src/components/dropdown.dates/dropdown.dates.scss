@@ -24,6 +24,13 @@
     cursor: default;
     @include textField;
 
+    &-text {
+      margin-right: 29px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
     &::after {
       @include expandMore(44px, 24px, $colorDark50);
     }

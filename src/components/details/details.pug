@@ -1,0 +1,8 @@
+mixin details(options)
+  details.details(
+    class= options.class
+    open= options.isOpen)
+    summary.details__title.heading.heading--level3 #{options.title}
+
+    .details__items
+      block

@@ -4,6 +4,7 @@ mixin dropdownDatesFilter(options)
     class= options.class)
     .js__dates-filter-container
       .dd-dates-filter__title.heading.heading--level3 #{options.title}
-      .dd-dates-filter__field.js__dates-filter-field #{options.placeholder}
+      .dd-dates-filter__field
+        .dd-dates-filter__field-text.js__dates-filter-field #{options.placeholder}
 
     block

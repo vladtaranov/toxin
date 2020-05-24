@@ -5,10 +5,12 @@ mixin dropdownDates(options)
     .dd-dates__fields.js__dates-fields
       .dd-dates__start
         .dd-dates__title.heading.heading--level3 #{options.startTitle}
-        .dd-dates__field.js__dates-start #{options.startPlaceholder}
+        .dd-dates__field
+          .dd-dates__field-text.js__dates-start #{options.startPlaceholder}
 
       .dd-dates__end
         .dd-dates__title.heading.heading--level3 #{options.endTitle}
-        .dd-dates__field.js__dates-end #{options.endPlaceholder}
+        .dd-dates__field
+          .dd-dates__field-text.js__dates-end #{options.endPlaceholder}
 
     block
