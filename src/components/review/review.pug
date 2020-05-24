@@ -6,10 +6,11 @@ mixin review(options)
       img.review__photo(
         src= options.photo
         alt="")
-      .review__name.heading.heading--level4 #{options.name}
-      .review__date #{options.date}
+      .review__name-and-date
+        .review__name.heading.heading--level4 #{options.name}
+        .review__date #{options.date}
 
-    .review__review
+    .review__like-and-text
       .review__like
         +like({
           name: `review-${options.id}`,

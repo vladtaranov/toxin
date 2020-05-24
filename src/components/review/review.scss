@@ -5,25 +5,45 @@
   color: $colorDark75;
 
   &__person,
-  &__review {
+  &__like-and-text {
     display: flex;
-    justify-content: space-between;
+  }
+
+  &__person {
+    margin-bottom: 12px;
+  }
+
+  &__photo,
+  &__like {
+    width: 48px;
   }
 
   &__photo {
-    width: 48px;
     height: 48px;
-    margin-right: 10px;
     box-shadow: 0 10px 20px rgba($colorBlack, .1);
     border: 2px solid white;
     border-radius: 24px;
   }
 
+  &__name-and-date {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__name-and-date,
+  &__text {
+    flex: 1;
+    margin-left: 10px;
+  }
+
   &__name {
+    line-height: 24px;
   }
 
   &__like {
     display: flex;
     justify-content: center;
+    margin-top: 2px;
   }
 }
