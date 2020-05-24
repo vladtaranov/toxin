@@ -1,11 +1,21 @@
+include ../../../components/advantage/advantage
 include ../../../components/review/review
 
 // COLUMN LEFT
 
 .form-elements__column.with-wide-margin
 
+  +advantage({
+    icon: 'face',
+    title: 'Комфорт',
+    caption: 'Шумопоглащающие стены'
+  })
 
-
+  +advantage({
+    icon: 'city',
+    title: 'Удобство',
+    caption: 'Окно в каждой из спален'
+  })
 
 
 
@@ -20,7 +30,7 @@ include ../../../components/review/review
     date: '5 дней назад',
     photo: '../../assets/images/reviews/murad.jpg',
     text: `Великолепный матрас на кровате в основной спальне! А пуфик вообще потрясающий.
-      И стены действительно шумоподавляющие. Выкрикивал комплименты повару &mdash;
+      И стены действительно шумоподавляющие. Выкрикивал комплименты повару -
       никто не жаловался из соседей`,
     likesCount: 12,
     isLiked: 'true'

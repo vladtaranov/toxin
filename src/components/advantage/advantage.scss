@@ -1,0 +1,42 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.advantage {
+  display: flex;
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+
+    &::before {
+      background: $primaryGradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 48px;
+      line-height: 41px;
+      font-family: "material icons", sans-serif;
+    }
+
+    &--face::before {
+      content: "insert_emoticon";
+    }
+
+    &--city::before {
+      content: "location_city";
+    }
+  }
+
+  &__description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+
+  &__title {
+    line-height: 24px;
+  }
+}

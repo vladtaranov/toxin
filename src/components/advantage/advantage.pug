@@ -1,0 +1,10 @@
+mixin advantage(options)
+  .advantage(
+    class= options.class)
+
+    .advantage__icon(
+      class= `advantage__icon--${options.icon}`)
+    .advantage__description
+      .advantage__title.heading.heading--level4 #{options.title}
+      .advantage__caption #{options.caption}
+

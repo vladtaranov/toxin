@@ -2,6 +2,7 @@ import './reset.scss';
 import './global.scss';
 import './fonts.scss';
 
+import '../../components/advantage/advantage.scss';
 import '../../components/calendar/calendar.scss';
 import '../../components/checkbox/checkbox.scss';
 import '../../components/checkbox.rich/checkbox.rich.scss';
