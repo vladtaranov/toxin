@@ -1,5 +1,6 @@
 extends ../../layouts/main/main
 
+include ../../layouts/search-room/search-room
 include ../../layouts/sign-in/sign-in
 include ../../layouts/sign-up/sign-up
 
@@ -15,11 +16,30 @@ block content
 
     .cards__column
 
+      // SEARCH ROOM
+
+      +searchRoom({
+        formName: 'search-room',
+        action: '#',
+        class: 'cards__box',
+        visitors: [
+          {name: 'adults', title: 'Взрослые', value: 0},
+          {name: 'children', title: 'Дети', value: 0},
+          {name: 'infants', title: 'Младенцы', value: 0}
+        ]
+      })
+
+      // SIGN UP
+
       +signUp({
         formName: 'sign-up',
         action: '#',
         class: 'cards__box'
       })
+
+    .cards__column
+
+      // SIGN IN
 
       +signIn({
         formName: 'sign-in',

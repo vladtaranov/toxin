@@ -1,0 +1,23 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.search-room {
+  padding: 40px 30px 30px 30px;
+  background: white;
+
+  &__title,
+  &__calendar-dates {
+    margin-bottom: 20px;
+  }
+
+  &__visitors {
+    margin-bottom: 30px;
+  }
+
+  &__calendar {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    left: 0;
+  }
+}

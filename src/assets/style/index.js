@@ -21,6 +21,7 @@ import '../../components/text-field/text-field.scss';
 import '../../components/toggle/toggle.scss';
 
 import '../../layouts/header/header.scss';
+import '../../layouts/search-room/search-room.scss';
 import '../../layouts/sign-in/sign-in.scss';
 import '../../layouts/sign-up/sign-up.scss';
 

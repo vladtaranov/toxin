@@ -1,0 +1,45 @@
+include ../../components/buttons/buttons
+include ../../components/calendar/calendar
+include ../../components/dropdown/dropdown
+include ../../components/dropdown.dates/dropdown.dates.pug
+
+mixin searchRoom(options)
+  form.search-room(
+    name= options.formName
+    action= options.action
+    class= options.class)
+
+    .search-room__title.heading.heading--level1 Найдём номера под ваши пожелания
+
+    +dropdownDates({
+      class: 'search-room__calendar-dates',
+      calendarName: 'visit',
+      startTitle: 'Прибытие',
+      endTitle: 'Выезд',
+      startPlaceholder: 'ДД.ММ.ГГГГ',
+      endPlaceholder: 'ДД.ММ.ГГГГ'
+    })
+
+      +calendar({
+        class: 'search-room__calendar',
+        name: 'visit',
+        start: options.startDate,
+        end: options.endDate
+      })
+
+    +dropdown({
+      class: 'search-room__visitors',
+      name: 'visitors',
+      title: 'Гости',
+      placeholder: 'Сколько гостей',
+      values: options.visitors,
+      sumMode: 'all',
+      wordForms: 'гость, гостя, гостей',
+      hasButtons: true
+    })
+
+    +buttonAction({
+      type: 'submit',
+      title: 'Подобрать номер'
+    })
+
