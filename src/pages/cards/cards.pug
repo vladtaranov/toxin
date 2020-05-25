@@ -1,5 +1,8 @@
 extends ../../layouts/main/main
 
+include ../../components/calendar/calendar
+
+include ../../layouts/order-room/order-room
 include ../../layouts/search-room/search-room
 include ../../layouts/sign-in/sign-in
 include ../../layouts/sign-up/sign-up
@@ -39,11 +42,38 @@ block content
 
     .cards__column
 
+      // ORDER ROOM
+
+      +orderRoom({
+        formName: 'order-room',
+        action: '#',
+        class: 'cards__box',
+        startDate: '2020-5-19',
+        endDate: '2020-5-23',
+        visitors: [
+          {name: 'adults', title: 'Взрослые', value: 2},
+          {name: 'children', title: 'Дети', value: 1},
+          {name: 'infants', title: 'Младенцы', value: 0}
+        ]
+      })
+
       // SIGN IN
 
       +signIn({
         formName: 'sign-in',
         action: '#',
         class: 'cards__box'
+      })
+
+    .cards__column--narrow
+
+      // CALENDAR
+
+      +calendar({
+        name: 'calendar--open-forced',
+        class: 'cards__box cards__calendar',
+        start: '2020-5-19',
+        end: '2020-5-23',
+        isOpenForced: true
       })
 

@@ -1,0 +1,83 @@
+include ../../components/buttons/buttons
+include ../../components/calendar/calendar
+include ../../components/dropdown/dropdown
+include ../../components/dropdown.dates/dropdown.dates.pug
+
+mixin orderRoom(options)
+  form.order-room(
+    name= options.formName
+    action= options.action
+    class= options.class)
+
+    // KEY INFO
+
+    .order-room__key-info
+      .order-room__room-number
+        | №&nbsp;<span class="heading heading--level1">888</span>
+      .order-room__room-type.heading.heading--level3 Люкс
+      .order-room__price-pro-day <span>9&nbsp;990&nbsp;₽</span> в&nbsp;сутки
+
+    // DATES
+
+    +dropdownDates({
+      class: 'order-room__calendar-dates',
+      calendarName: 'order__visit',
+      startTitle: 'Прибытие',
+      endTitle: 'Выезд',
+      startPlaceholder: 'ДД.ММ.ГГГГ',
+      endPlaceholder: 'ДД.ММ.ГГГГ'
+    })
+
+      +calendar({
+        class: 'order-room__calendar',
+        name: 'order__visit',
+        start: options.startDate,
+        end: options.endDate
+      })
+
+    // VISITORS
+
+    +dropdown({
+      class: 'order-room__visitors',
+      name: 'order__visitors',
+      title: 'Гости',
+      placeholder: 'Сколько гостей',
+      values: options.visitors,
+      sumMode: 'all',
+      wordForms: 'гость, гостя, гостей',
+      hasButtons: true
+    })
+
+    // ADDITIONAL INFO
+
+    .order-room__fees
+      .order-room__fees-caption 9&nbsp;990&nbsp;₽&nbsp;x&nbsp;4 суток
+      .order-room__fees-total 39&nbsp;960&nbsp;₽
+
+    .order-room__fees
+      .order-room__fees-caption Сбор за&nbsp;услуги: скидка 2&nbsp179&nbsp;₽
+      .order-room__fees-info.icon(
+        title= 'Дополнительная информация') error_outline
+      .order-room__fees-total 0&nbsp;₽
+
+    .order-room__fees.order-room__fees--last
+      .order-room__fees-caption Сбор за&nbsp;дополнительные услуги
+      .order-room__fees-info.icon(
+        title= 'Дополнительная информация') error_outline
+      .order-room__fees-total 300&nbsp;₽
+
+
+
+    .order-room__total.heading.heading--level2
+      .order-room__total-caption Итого
+      .order-room__total-price 38&nbsp;081&nbsp;₽
+
+
+
+
+    // ACTION
+
+    +buttonAction({
+      type: 'submit',
+      title: 'Забронировать'
+    })

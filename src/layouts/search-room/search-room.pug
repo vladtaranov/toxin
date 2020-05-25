@@ -11,9 +11,11 @@ mixin searchRoom(options)
 
     .search-room__title.heading.heading--level1 Найдём номера под ваши пожелания
 
+    // DATES
+
     +dropdownDates({
       class: 'search-room__calendar-dates',
-      calendarName: 'visit',
+      calendarName: 'search__visit',
       startTitle: 'Прибытие',
       endTitle: 'Выезд',
       startPlaceholder: 'ДД.ММ.ГГГГ',
@@ -22,14 +24,16 @@ mixin searchRoom(options)
 
       +calendar({
         class: 'search-room__calendar',
-        name: 'visit',
+        name: 'search__visit',
         start: options.startDate,
         end: options.endDate
       })
 
+    // VISITORS
+
     +dropdown({
       class: 'search-room__visitors',
-      name: 'visitors',
+      name: 'search__visitors',
       title: 'Гости',
       placeholder: 'Сколько гостей',
       values: options.visitors,
@@ -37,6 +41,8 @@ mixin searchRoom(options)
       wordForms: 'гость, гостя, гостей',
       hasButtons: true
     })
+
+    // ACTION
 
     +buttonAction({
       type: 'submit',
