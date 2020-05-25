@@ -1,0 +1,51 @@
+include ../../components/buttons/buttons
+include ../../components/text-field/text-field
+
+mixin signIn(options)
+  form.sign-in(
+    name= options.formName
+    action= options.action
+    class= options.class)
+
+    .sign-in__title.heading.heading--level1 Войти
+
+    +textField({
+      class: 'sign-in__email',
+      name: 'email',
+      placeholder: 'Email',
+      inputMode: 'email'
+    })
+
+    +textField({
+      class: 'sign-in__password',
+      type: 'password',
+      name: 'password',
+      placeholder: 'Пароль'
+    })
+
+    .sign-in__action
+      +buttonPrimary({
+        type: 'submit',
+        title: 'Регистрация'
+      })
+
+      +buttonSecondary({
+        type: 'submit',
+        title: 'Войти'
+      })
+
+      +buttonInline({
+        type: 'button',
+        title: 'Применить'
+      })
+
+      +buttonAction({
+        type: 'button',
+        title: 'Далее'
+      })
+
+    .sign-in__new-account
+      .sign-in__no-account Нет аккаунта на Toxin?
+      button.btn.btn--secondary(
+        type='button'
+        value='Создать')

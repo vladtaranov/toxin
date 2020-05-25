@@ -8,6 +8,7 @@ mixin textField(options)
       .text-field__caption #{options.caption}
 
     input.text-field__field.js__text-field(
+      type=options.type || 'text'
       name=options.name
       placeholder=options.placeholder
       value=options.value

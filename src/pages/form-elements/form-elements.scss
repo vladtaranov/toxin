@@ -136,13 +136,35 @@
     margin-right: 18px;
 
     &--inline {
-      margin: -2px 18px -5px 0;
+      margin: -5px 20px 0 0;
     }
   }
 
   &__pagination {
+    padding-bottom: 10px;
+    overflow-x: auto;
+
     @media screen and (max-width: $smallDesktopBreakpoint) {
-      margin-bottom: 31px;
+      margin-bottom: 21px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: $colorDark5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: $colorDark25;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: $colorDark50;
+      transition: all $standardTransition;
     }
   }
 

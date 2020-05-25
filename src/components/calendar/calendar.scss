@@ -7,10 +7,10 @@
   flex-direction: column;
   overflow: hidden;
   visibility: hidden;
-  max-width: 320px;
+  width: 320px;
+  background: white;
   padding: 20px;
   opacity: 0;
-  background: white;
   @include borders;
 
   &.is-open {
@@ -145,6 +145,6 @@
   }
 
   @media screen and (max-width: $mobileBreakpoint) {
-    max-width: 100%;
+    width: 100%;
   }
 }

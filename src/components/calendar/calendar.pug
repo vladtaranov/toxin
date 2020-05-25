@@ -1,3 +1,5 @@
+include ../../components/buttons/buttons
+
 mixin calendar(options)
   .calendar.js__calendar(
     class= options.style
@@ -15,8 +17,15 @@ mixin calendar(options)
     .calendar__dates.js__calendar-dates
 
     .calendar__buttons
-      .btn.btn--inline.js__calendar-apply Применить
-      .btn.btn--inline.js__calendar-clear Очистить
+      +buttonInline({
+        class: 'js__calendar-apply',
+        title: 'Применить'
+      })
+
+      +buttonInline({
+        class: 'js__calendar-clear',
+        title: 'Очистить'
+      })
 
     input.js__calendar-start(
       type='hidden'

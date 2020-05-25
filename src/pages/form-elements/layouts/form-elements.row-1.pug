@@ -1,15 +1,16 @@
-include ../../../components/text-field/text-field
+include ../../../components/buttons/buttons
 include ../../../components/calendar/calendar
+include ../../../components/checkbox/checkbox
 include ../../../components/dropdown/dropdown
 include ../../../components/dropdown.dates/dropdown.dates.pug
 include ../../../components/dropdown.dates-filter/dropdown.dates-filter.pug
-include ../../../components/checkbox/checkbox
-include ../../../components/radio/radio
-include ../../../components/toggle/toggle
 include ../../../components/like/like
-include ../../../components/rate/rate
-include ../../../components/range/range
 include ../../../components/pagination/pagination
+include ../../../components/radio/radio
+include ../../../components/range/range
+include ../../../components/rate/rate
+include ../../../components/text-field/text-field
+include ../../../components/toggle/toggle
 
 // COLUMN LEFT
 
@@ -211,22 +212,49 @@ include ../../../components/pagination/pagination
   h3.form-elements__subtitle.heading.heading--level3 Buttons
 
   .form-elements__buttons
-    .form-elements__button.btn.btn--primary Click me
-    .form-elements__button.btn.btn--primary Click me
+    .form-elements__button
+      +buttonPrimary({
+        class: 'button-1',
+        title: 'Click me'
+      })
+
+    .form-elements__button
+      +buttonPrimary({
+        class: 'button-2',
+        title: 'Click me'
+      })
 
   .form-elements__buttons
-    .form-elements__button.btn.btn--secondary Click me
-    .form-elements__button.btn.btn--secondary Click me
+    .form-elements__button
+      +buttonSecondary({
+        class: 'button-3',
+        title: 'Click me'
+      })
+
+    .form-elements__button
+      +buttonSecondary({
+        class: 'button-4',
+        title: 'Click me'
+      })
 
   .form-elements__buttons
     .form-elements__button--inline
-      .btn.btn--inline Click me
+      +buttonInline({
+        class: 'button-5',
+        title: 'Click me'
+      })
+
     .form-elements__button--inline
-      .btn.btn--inline Click me
+      +buttonInline({
+        class: 'button-6',
+        title: 'Click me'
+      })
 
   .form-elements__buttons--last
-    .btn.btn--action Перейти к оплате
-    .btn__arrow-forward
+    +buttonAction({
+      class: 'button-7',
+      title: 'Перейти к оплате'
+    })
 
   // PAGINATION
 

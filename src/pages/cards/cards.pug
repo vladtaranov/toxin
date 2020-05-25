@@ -1,5 +1,7 @@
 extends ../../layouts/main/main
 
+include ../../layouts/sign-in/sign-in
+
 block var
   - const pageTitle = 'Cards'
   - const bodyStyle = 'cards'
@@ -9,3 +11,12 @@ block header
 
 block content
   .wrapper.cards__wrapper
+
+    .cards__column
+
+      +signIn({
+        formName: 'sign-in',
+        action: '#',
+        class: 'cards__box'
+      })
+

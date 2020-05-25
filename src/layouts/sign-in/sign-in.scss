@@ -1,0 +1,38 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.sign-in {
+  z-index: -2;
+  padding: 40px 30px 30px 30px;
+  background: white;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__email {
+    margin-bottom: 10px;
+  }
+
+  &__password {
+    margin-bottom: 20px;
+  }
+
+  &__action {
+    margin-bottom: 30px;
+  }
+
+  &__action2 {
+    width: 100%;
+    color: black;
+    height: 50px;
+    border: 1px solid #c8c8c8;
+    background-color: #f3f6f8;
+  }
+
+  &__new-account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

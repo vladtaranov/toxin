@@ -1,3 +1,5 @@
+include ../../components/buttons/buttons
+
 mixin dropdown(options)
   - const style = `${options.class} ${options.isOpenForced && 'is-open--forced'}`
 
@@ -24,8 +26,16 @@ mixin dropdown(options)
 
       if options.hasButtons
         .dropdown__buttons
-          .dropdown__apply.btn.btn--inline.js__dropdown-apply Применить
-          .dropdown__clear.btn.btn--inline.js__dropdown-clear Очистить
+          .dropdown__apply
+            +buttonInline({
+              class: 'js__dropdown-apply',
+              title: 'Применить'
+            })
+          .dropdown__clear
+            +buttonInline({
+              class: 'js__dropdown-clear',
+              title: 'Очистить'
+            })
 
 mixin optionLayout(option)
   li.option
