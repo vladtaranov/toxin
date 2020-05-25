@@ -36,6 +36,7 @@
     padding: 0 18px 2px 18px;
     line-height: 42px;
     white-space: nowrap;
+    pointer-events: none;
   }
 
   &--primary__title,
@@ -85,92 +86,5 @@
   &:hover [class$="--inline__title"] {
     color: $colorDark50;
     transition: all $standardTransition;
-  }
-}
-
-.btn-old {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  font-size: 12px;
-  line-height: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
-  cursor: pointer;
-  user-select: none;
-
-  &--primary,
-  &--secondary,
-  &--action {
-    .btn__field {
-      height: 44px;
-      border: 2px solid transparent;
-      border-radius: 22px;
-      padding: 1px 18px 0 18px;
-
-      &::before {
-        content: "";
-        position: absolute;
-        z-index: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: -2px;
-        border-radius: inherit;
-        background: $primaryGradient;
-      }
-
-      &:hover::before {
-        opacity: .5;
-        transition: all $standardTransition;
-      }
-
-
-    }
-  }
-
-
-
-  &--primary {
-    color: white;
-  }
-
-  &--secondary .btn__title {
-    z-index: 1;
-    background: white;
-    background-clip: padding-box;
-    color: $colorPurple;
-  }
-
-  &--inline {
-    margin: -5px;
-    padding: 5px;
-    color: $colorPurple;
-
-    &:hover {
-      color: $colorDark50;
-      transition: all $standardTransition;
-    }
-  }
-
-  &--action {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding-right: 44px;
-    padding-left: 44px;
-    text-align: center;
-    color: white;
-  }
-
-  &__arrow-forward::after {
-    z-index: 1;
-    font-family: "material icons", sans-serif;
-    color: white;
-    @include arrowForward;
   }
 }
