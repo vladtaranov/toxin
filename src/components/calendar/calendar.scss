@@ -13,7 +13,8 @@
   opacity: 0;
   @include borders;
 
-  &.is-open {
+  &.is-open,
+  &.is-open--forced {
     visibility: visible;
     opacity: 1;
     transition: all $standardTransition;

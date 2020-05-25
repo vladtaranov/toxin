@@ -1,8 +1,10 @@
 include ../../components/buttons/buttons
 
 mixin calendar(options)
+  - const style = `${options.class} ${options.isOpenForced && 'is-open--forced'}`
+
   .calendar.js__calendar(
-    class= options.class
+    class= style
     data-name= options.name)
     .calendar__month
       .calendar__month-change.icon.js__calendar-previous-month arrow_back
