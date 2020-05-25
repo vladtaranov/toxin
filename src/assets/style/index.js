@@ -22,6 +22,7 @@ import '../../components/toggle/toggle.scss';
 
 import '../../layouts/header/header.scss';
 import '../../layouts/sign-in/sign-in.scss';
+import '../../layouts/sign-up/sign-up.scss';
 
 import '../../pages/cards/cards.scss';
 import '../../pages/colors-and-type/colors-and-type.scss';

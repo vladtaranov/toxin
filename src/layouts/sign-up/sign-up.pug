@@ -1,0 +1,98 @@
+include ../../components/buttons/buttons
+include ../../components/radio/radio
+include ../../components/text-field/text-field
+include ../../components/toggle/toggle
+
+mixin signUp(options)
+  form.sign-in(
+    name= options.formName
+    action= options.action
+    class= options.class)
+
+    .sign-in__title.heading.heading--level1 Регистрация аккаунта
+
+    // NAME & SURNAME
+
+    +textField({
+      class: 'sign-up__name',
+      name: 'name',
+      placeholder: 'Имя'
+    })
+
+    +textField({
+      class: 'sign-up__surname',
+      name: 'surname',
+      placeholder: 'Фамилия'
+    })
+
+    // GENDER
+
+    .sign-up__genders
+
+      +radio({
+        class: 'sign-up__gender',
+        name: 'gender',
+        value: 'male',
+        title: 'Мужчина',
+        isChecked: true
+      })
+
+      +radio({
+        class: 'sign-up__gender',
+        name: 'gender',
+        value: 'female',
+        title: 'Женщина'
+      })
+
+    // BIRTHDAY
+
+    +textField({
+      class: 'sign-up__birthday',
+      name: 'birthday',
+      title: 'Дата рождения',
+      placeholder: 'ДД.ММ.ГГГГ',
+      inputMode: 'number'
+    })
+
+    // SIGN IN DATA
+
+    +textField({
+      class: 'sign-up__email',
+      name: 'email',
+      title: 'Данные для входа в сервис',
+      placeholder: 'Email',
+      inputMode: 'email'
+    })
+
+    +textField({
+      class: 'sign-up__password',
+      type: 'password',
+      name: 'password',
+      placeholder: 'Пароль'
+    })
+
+    // SPECIAL OFFERS
+
+    +toggle({
+      class: 'sign-up__offers',
+      name: 'offers',
+      value: 'on',
+      title: 'Получать спецпредложения'
+    })
+
+    // CONFIRM
+
+    .sign-up__action
+      +buttonAction({
+        type: 'submit',
+        title: 'Перейти к оплате'
+      })
+
+    // ALREADY HAVING ACCOUNT
+
+    .sign-up__existing-account
+      .sign-up__existing-account-message Уже есть аккаунт на&nbsp;Toxin
+      .sign-up__existing-account-sign-in
+        +buttonSecondary({
+          title: 'Войти'
+        })

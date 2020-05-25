@@ -1,27 +1,37 @@
 @import "../../assets/style/constants";
 @import "../../assets/style/mixins";
 
-.sign-in {
+.sign-up {
   padding: 40px 30px 30px 30px;
   background: white;
 
-  &__title {
+  &__title,
+  &__birthday,
+  &__offers {
     margin-bottom: 20px;
   }
 
-  &__email {
+  &__name,
+  &__surname,
+  &__email,
+  &__password {
     margin-bottom: 10px;
   }
 
-  &__password {
+  &__genders {
+    display: flex;
     margin-bottom: 20px;
+  }
+
+  &__gender {
+    margin-right: 20px;
   }
 
   &__action {
     margin-bottom: 30px;
   }
 
-  &__new-account {
+  &__existing-account {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,7 +43,7 @@
       color: $colorBlack;
     }
 
-    &-create {
+    &-sign-in {
       margin-left: 10px;
     }
   }

@@ -9,6 +9,8 @@ mixin signIn(options)
 
     .sign-in__title.heading.heading--level1 Войти
 
+    // SIGN IN DATA
+
     +textField({
       class: 'sign-in__email',
       name: 'email',
@@ -23,11 +25,15 @@ mixin signIn(options)
       placeholder: 'Пароль'
     })
 
+    // CONFIRM
+
     .sign-in__action
       +buttonAction({
         type: 'submit',
         title: 'Войти'
       })
+
+    // ALREADY HAVING ACCOUNT
 
     .sign-in__new-account
       .sign-in__new-account-message Нет аккаунта на&nbsp;Toxin?
