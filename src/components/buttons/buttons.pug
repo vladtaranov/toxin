@@ -1,0 +1,45 @@
+mixin buttonPrimary(optionsBtnPri)
+  +button({
+    id: 'primary',
+    class: optionsBtnPri.class,
+    type: optionsBtnPri.type,
+    title: optionsBtnPri.title
+  })
+
+mixin buttonSecondary(optionsBtnSec)
+  +button({
+    id: 'secondary',
+    class: optionsBtnSec.class,
+    type: optionsBtnSec.type,
+    title: optionsBtnSec.title
+  })
+
+mixin buttonAction(optionsBtnAct)
+  +button({
+    id: 'action',
+    class: optionsBtnAct.class,
+    type: optionsBtnAct.type,
+    title: optionsBtnAct.title
+  })
+
+mixin buttonInline(optionsBtnInl)
+  +button({
+    id: 'inline',
+    class: optionsBtnInl.class,
+    type: optionsBtnInl.type,
+    title: optionsBtnInl.title
+  })
+
+mixin button(options)
+  .btn(
+    class= `btn--${options.id} ${options.class || ''}`)
+    button(
+      class= `btn--${options.id}__field`
+      type= options.type)
+
+    div(
+      class= `btn--${options.id}__title`)
+      | #{options.title}
+
+    if options.id === 'action'
+      .btn--action__arrow.icon
