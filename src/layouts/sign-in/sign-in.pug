@@ -24,28 +24,14 @@ mixin signIn(options)
     })
 
     .sign-in__action
-      +buttonPrimary({
-        type: 'submit',
-        title: 'Регистрация'
-      })
-
-      +buttonSecondary({
+      +buttonAction({
         type: 'submit',
         title: 'Войти'
       })
 
-      +buttonInline({
-        type: 'button',
-        title: 'Применить'
-      })
-
-      +buttonAction({
-        type: 'button',
-        title: 'Далее'
-      })
-
     .sign-in__new-account
-      .sign-in__no-account Нет аккаунта на Toxin?
-      button.btn.btn--secondary(
-        type='button'
-        value='Создать')
+      .sign-in__new-account-message Нет аккаунта на&nbsp;Toxin?
+      .sign-in__new-account-create
+        +buttonSecondary({
+          title: 'Создать'
+        })

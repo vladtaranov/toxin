@@ -22,17 +22,20 @@
     margin-bottom: 30px;
   }
 
-  &__action2 {
-    width: 100%;
-    color: black;
-    height: 50px;
-    border: 1px solid #c8c8c8;
-    background-color: #f3f6f8;
-  }
-
   &__new-account {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &-message {
+      flex: 1;
+      font-size: 14px;
+      line-height: 18px;
+      color: $colorBlack;
+    }
+
+    &-create {
+      margin-left: 10px;
+    }
   }
 }
