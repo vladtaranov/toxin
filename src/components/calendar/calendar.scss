@@ -54,6 +54,10 @@
     width: calc(100% / 7);
     max-width: 40px;
     height: 40px;
+
+    @media screen and (max-width: $mobileBreakpoint) {
+      max-width: 100%;
+    }
   }
 
   &__day-of-week {
@@ -138,5 +142,9 @@
     & .is-hidden {
       display: none;
     }
+  }
+
+  @media screen and (max-width: $mobileBreakpoint) {
+    max-width: 100%;
   }
 }
