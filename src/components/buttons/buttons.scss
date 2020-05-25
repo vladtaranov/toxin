@@ -31,12 +31,14 @@
   &--secondary__title,
   &--action__title {
     z-index: 1;
+    overflow: hidden;
     height: 44px;
     border-radius: 22px;
     padding: 0 18px 2px 18px;
     line-height: 42px;
     white-space: nowrap;
     pointer-events: none;
+    text-overflow: ellipsis;
   }
 
   &--primary__title,

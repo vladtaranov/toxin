@@ -4,12 +4,12 @@ include ../../components/text-field/text-field
 include ../../components/toggle/toggle
 
 mixin signUp(options)
-  form.sign-in(
+  form.sign-up(
     name= options.formName
     action= options.action
     class= options.class)
 
-    .sign-in__title.heading.heading--level1 Регистрация аккаунта
+    .sign-up__title.heading.heading--level1 Регистрация аккаунта
 
     // NAME & SURNAME
 
@@ -92,7 +92,7 @@ mixin signUp(options)
 
     .sign-up__existing-account
       .sign-up__existing-account-message Уже есть аккаунт на&nbsp;Toxin
-      .sign-up__existing-account-sign-in
+      .sign-up__existing-account-sign-up
         +buttonSecondary({
           title: 'Войти'
         })

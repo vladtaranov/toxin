@@ -5,8 +5,9 @@ const onDateTextFieldInput = ({ target }) => {
 };
 
 const init = () => {
-  document.querySelector('[name="text-field--masked"]')
-    .addEventListener('input', onDateTextFieldInput);
+  const dateTextField = document.querySelector('[name="text-field--masked"]');
+
+  if (dateTextField) dateTextField.addEventListener('input', onDateTextFieldInput);
 };
 
 export default {
