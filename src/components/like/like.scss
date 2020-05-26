@@ -11,6 +11,7 @@
   background: white;
   cursor: pointer;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
   &__symbol {
     position: absolute;

@@ -12,6 +12,7 @@
   color: $colorPurple;
   cursor: pointer;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
   &--action {
     width: 100%;
