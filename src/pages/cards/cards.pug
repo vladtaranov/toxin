@@ -3,6 +3,7 @@ extends ../../layouts/main/main
 include ../../components/calendar/calendar
 
 include ../../layouts/order-room/order-room
+include ../../layouts/room-card/room-card
 include ../../layouts/search-room/search-room
 include ../../layouts/sign-in/sign-in
 include ../../layouts/sign-up/sign-up
@@ -77,3 +78,34 @@ block content
         isOpenForced: true
       })
 
+      // ROOM CARDS
+
+      .cards__room-cards
+
+        +roomCard({
+          class: 'cards__room-card',
+          href: '#',
+          images: [
+            '../../assets/images/rooms/1.jpg',
+            '../../assets/images/rooms/2.jpg',
+            '../../assets/images/rooms/1.jpg'
+          ],
+          roomNumber: 888,
+          isLux: true,
+          price: 9990,
+          reviewsCount: 145
+        })
+
+        +roomCard({
+          class: 'cards__room-card',
+          href: '#',
+          images: [
+            '../../assets/images/rooms/1.jpg',
+            '../../assets/images/rooms/2.jpg',
+            '../../assets/images/rooms/1.jpg'
+          ],
+          roomNumber: 840,
+          price: 9990,
+          rate: 4,
+          reviewsCount: 65
+        })

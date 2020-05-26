@@ -21,11 +21,15 @@
     }
   }
 
-  &__box {
+  &__box,
+  &__room-card {
     margin-bottom: 40px;
     box-shadow: 0 0 25px rgba(black, .2);
-    border: 1px solid rgba(black, .12);
     border-radius: 4px;
+  }
+
+  &__box {
+    border: 1px solid rgba(black, .12);
   }
 
   &__calendar {
@@ -33,5 +37,7 @@
     z-index: 9;
   }
 
-  /*  */
+  &__room-cards {
+    width: 270px;
+  }
 }

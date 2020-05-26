@@ -8,37 +8,10 @@
   /* KEY INFO */
 
   &__key-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
     margin-bottom: 20px;
   }
 
-  &__room-number {
-    margin-right: 5px;
-    font-size: 14px;
-    line-height: 17px;
-    font-weight: bold;
-    color: $colorBlack;
-  }
-
-  &__room-type {
-    margin-bottom: 3px;
-    color: $colorPurple;
-  }
-
-  &__price-pro-day {
-    margin-bottom: 2px;
-    margin-left: auto;
-    line-height: 18px;
-    text-align: right;
-    color: $colorDark50;
-
-    & span {
-      font-size: 14px;
-      font-weight: bold;
-    }
-  }
+  @include roomKeyInfo;
 
   /* DATES AND VISITORS */
 
@@ -60,14 +33,16 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    line-height: 18px;
   }
 
   &__fees {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    line-height: 18px;
 
     &-caption {
       width: calc(100% / 3 * 2 + 7px);
