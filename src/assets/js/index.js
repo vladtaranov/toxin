@@ -6,6 +6,8 @@ import like from '../../components/like/like';
 import pagination from '../../components/pagination/pagination';
 import range from '../../components/range/range';
 
+import cardGallery from '../../layouts/room-card/room-card';
+
 import cards from '../../pages/cards/cards';
 import formElements from '../../pages/form-elements/form-elements';
 
@@ -18,6 +20,10 @@ dropdownDatesFilter.init();
 like.init();
 pagination.init();
 range.init();
+
+// LAYOUTS INIT
+
+cardGallery.init();
 
 // PAGES INIT
 

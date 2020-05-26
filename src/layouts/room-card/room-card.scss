@@ -1,0 +1,149 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.room-card {
+  display: block;
+  background: white;
+
+  /* GALLERY */
+
+  &__gallery {
+    position: relative;
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    border-radius: 4px 4px 0 0;
+    opacity: 0;
+    transition: all $standardTransition;
+
+    &.is-active {
+      position: relative;
+      visibility: visible;
+      z-index: 1;
+      opacity: 1;
+      transition: all $standardTransition;
+    }
+  }
+
+  /* GALLERY ARROWS */
+
+  &__arrow-left,
+  &__arrow-right {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 44px;
+    height: 100%;
+    border-radius: 4px 0 0 4px;
+    background: linear-gradient(90deg, rgba(black, .25), rgba(black, 0));
+    opacity: 0;
+    cursor: pointer;
+
+    &::before {
+      content: "arrow_back";
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      font-size: 24px;
+      line-height: 1;
+      color: white;
+    }
+
+    &:hover {
+      background: linear-gradient(90deg, rgba(black, .35), rgba(black, 0));
+      transition: all $standardTransition;
+    }
+  }
+
+  &__arrow-left {
+    left: 0;
+  }
+
+  &__arrow-right {
+    right: 0;
+    transform: rotate(180deg);
+  }
+
+  /* GALLERY POINTERS */
+
+  &__pointers {
+    position: absolute;
+    z-index: 2;
+    right: 15px;
+    bottom: 15px;
+    display: inline-flex;
+  }
+
+  &__pointer {
+    width: 8px;
+    height: 8px;
+    margin-left: 4px;
+    box-shadow: 0 5px 5px $colorDark25;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &.is-active {
+      background: white;
+    }
+  }
+
+  /* ROOM INFO */
+
+  &__info {
+    display: block;
+    padding: 20px;
+  }
+
+  &__key-info {
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba($colorBlack, .1);
+    padding-bottom: 10px;
+  }
+
+  @include roomKeyInfo;
+
+  &__rate-and-reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__rate {
+    display: flex;
+    align-items: center;
+  }
+
+  &__reviews {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: bold;
+    text-align: right;
+    color: $colorDark50;
+
+    & span {
+      font-weight: normal;
+    }
+  }
+
+  &:hover {
+    .room-card__arrow-left,
+    .room-card__arrow-right {
+      opacity: 1;
+      transition: all $standardTransition;
+    }
+  }
+}

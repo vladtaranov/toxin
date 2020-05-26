@@ -1,0 +1,45 @@
+include ../../components/rate/rate
+
+mixin roomCard(options)
+  section.room-card.js__room-card(
+    class= options.class
+    data-room= options.roomNumber
+    data-price= options.price
+    data-reviews= options.reviewsCount)
+
+    // GALLERY
+
+    .room-card__gallery.js__room-card-gallery
+      each image in options.images
+        img.room-card__image.js__room-card-image(
+          src= image
+          alt= '')
+
+      .room-card__arrow-left.icon.js__room-card-arrow-left
+      .room-card__arrow-right.icon.js__room-card-arrow-right
+
+      .room-card__pointers
+        each _, index in options.images
+          .room-card__pointer.js__room-card-pointer(
+            data-image= index)
+
+    // ROOM INFO
+
+    .room-card__info
+
+      .room-card__key-info
+        .room-card__room-number
+          | №&nbsp;<span class="heading heading--level1">#{options.roomNumber}</span>
+        if options.isLux
+          .room-card__room-type.heading.heading--level3 Люкс
+        .room-card__price-pro-day
+          | <span class="js__room-card-price"></span> в&nbsp;сутки
+
+      .room-card__rate-and-reviews
+        .room-card__rate
+          +rate({
+            name: `room-${options.roomNumber}`,
+            defaultValue: options.rate
+          })
+        .room-card__reviews
+          | #{options.reviewsCount} <span class="js__room-card-reviews"></span>
