@@ -1,0 +1,48 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.header {
+  width: 100%;
+  height: 70px;
+  background: white;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__logo {
+    height: 40px;
+  }
+
+  &__nav {
+    margin-left: auto;
+
+    &-items {
+      display: flex;
+      font-size: 14px;
+      line-height: 17px;
+      color: $colorDark50;
+    }
+
+    &-item {
+      margin-left: 30px;
+
+      & a {
+        margin: 0 -5px;
+        padding: 10px 5px;
+      }
+    }
+  }
+
+
+  &__actions {
+    margin-left: 30px;
+
+    & > *:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+mixin header(options)
+  .header(
+    class= options.class)
+
+    .wrapper.header__wrapper
+
+      img.header__logo(
+        src='../../assets/images/logo/logo.svg'
+        alt='')
+
+      nav.header__nav
+        ul.header__nav-items
+          each item in options.items
+            li.header__nav-item
+              a(href= '/') #{item}
+
+      .header__actions
+        block
+
