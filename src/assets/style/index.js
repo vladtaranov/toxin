@@ -20,6 +20,7 @@ import '../../components/review/review.scss';
 import '../../components/text-field/text-field.scss';
 import '../../components/toggle/toggle.scss';
 
+import '../../layouts/header/header.scss';
 import '../../layouts/header.ui-kit/header.ui-kit.scss';
 import '../../layouts/order-room/order-room.scss';
 import '../../layouts/room-card/room-card.scss';
@@ -30,3 +31,4 @@ import '../../layouts/sign-up/sign-up.scss';
 import '../../pages/cards/cards.scss';
 import '../../pages/colors-and-type/colors-and-type.scss';
 import '../../pages/form-elements/form-elements.scss';
+import '../../pages/headers-and-footers/headers-and-footers.scss';

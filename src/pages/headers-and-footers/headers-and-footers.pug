@@ -1,0 +1,28 @@
+extends ../../layouts/main/main
+
+include ../../components/buttons/buttons
+include ../../layouts/header/header
+
+block var
+  - const pageTitle = 'Headers & Footers'
+  - const bodyStyle = 'headers-and-footers'
+
+block header
+  include ../../layouts/header.ui-kit/header.ui-kit.pug
+
+block content
+  .headers-and-footers__wrapper
+
+    +header({
+      items: [
+        'Home', 'About us', 'Services'
+      ]
+    })
+
+      +buttonSecondary({
+        title: 'Login'
+      })
+
+      +buttonPrimary({
+        title: 'Register'
+      })
