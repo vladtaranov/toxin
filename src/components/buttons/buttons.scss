@@ -14,8 +14,14 @@
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 
-  &--action {
-    width: 100%;
+  &--normal-size {
+    height: 44px;
+    line-height: 42px;
+  }
+
+  &--small-size {
+    height: 34px;
+    line-height: 32px;
   }
 
   &--primary__field,
@@ -33,10 +39,8 @@
   &--action__title {
     z-index: 1;
     overflow: hidden;
-    height: 44px;
     border-radius: 22px;
     padding: 0 18px 2px 18px;
-    line-height: 42px;
     white-space: nowrap;
     pointer-events: none;
     text-overflow: ellipsis;
@@ -52,6 +56,10 @@
     width: 100%;
     padding-right: 44px;
     padding-left: 44px;
+  }
+
+  &--action {
+    width: 100%;
   }
 
   &--action__arrow::after {

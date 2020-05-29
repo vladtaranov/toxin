@@ -3,7 +3,8 @@ mixin buttonPrimary(optionsBtnPri)
     id: 'primary',
     class: optionsBtnPri.class,
     type: optionsBtnPri.type,
-    title: optionsBtnPri.title
+    title: optionsBtnPri.title,
+    size: optionsBtnPri.size
   })
 
 mixin buttonSecondary(optionsBtnSec)
@@ -11,7 +12,8 @@ mixin buttonSecondary(optionsBtnSec)
     id: 'secondary',
     class: optionsBtnSec.class,
     type: optionsBtnSec.type,
-    title: optionsBtnSec.title
+    title: optionsBtnSec.title,
+    size: optionsBtnSec.size
   })
 
 mixin buttonAction(optionsBtnAct)
@@ -19,7 +21,8 @@ mixin buttonAction(optionsBtnAct)
     id: 'action',
     class: optionsBtnAct.class,
     type: optionsBtnAct.type,
-    title: optionsBtnAct.title
+    title: optionsBtnAct.title,
+    size: optionsBtnAct.size
   })
 
 mixin buttonInline(optionsBtnInl)
@@ -27,7 +30,8 @@ mixin buttonInline(optionsBtnInl)
     id: 'inline',
     class: optionsBtnInl.class,
     type: optionsBtnInl.type,
-    title: optionsBtnInl.title
+    title: optionsBtnInl.title,
+    size: optionsBtnInl.size
   })
 
 mixin button(options)
@@ -37,8 +41,8 @@ mixin button(options)
       class= `btn--${options.id}__field`
       type= options.type || 'button')
 
-    div(
-      class= `btn--${options.id}__title`)
+    - const style = `btn--${options.id}__title btn--${options.size || 'normal'}-size`
+    div(class= style)
       | #{options.title}
 
     if options.id === 'action'
