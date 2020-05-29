@@ -20,6 +20,7 @@ import '../../components/review/review.scss';
 import '../../components/text-field/text-field.scss';
 import '../../components/toggle/toggle.scss';
 
+import '../../layouts/footer/footer.scss';
 import '../../layouts/header/header.scss';
 import '../../layouts/header.ui-kit/header.ui-kit.scss';
 import '../../layouts/order-room/order-room.scss';
