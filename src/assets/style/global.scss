@@ -99,3 +99,26 @@ body {
   white-space: nowrap;
   user-select: none;
 }
+
+[class^="fontello-"]::before,
+[class*=" fontello-"]::before {
+  line-height: 0;
+  font-family: "fontello", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  speak: none;
+  font-variant: normal;
+  text-transform: none;
+}
+
+.fontello-fb::before {
+  content: "\f308";
+}
+
+.fontello-tw::before {
+  content: '\f099';
+}
+
+.fontello-in::before {
+  content: '\f16d';
+}

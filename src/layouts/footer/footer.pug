@@ -1,0 +1,68 @@
+include ../../components/text-field/text-field
+
+mixin footer(options)
+  footer.footer(
+    class= options.class)
+
+    // MAIN //
+
+    .footer__main
+      .wrapper.footer__main-wrapper
+
+        // ABOUT
+
+        .footer__about
+          a.footer__logo(href= '#')
+            img(
+              src='../../assets/images/logo/logo.svg'
+              alt='')
+
+          .footer__about-caption #{options.aboutUs}
+
+        // NAV
+
+        each navSection in options.navSections
+          .footer__nav
+            .footer__title.heading.heading--level3 #{navSection.title}
+
+            ul.footer__nav-items
+              each item in navSection.items
+                li
+                  a.footer__nav-item(href= item.href) #{item.title}
+
+        // SUBSCRIPTION
+
+        form.footer__subscription
+          .footer__title.heading.heading--level3 #{options.subscription.title}
+
+          .footer__subscription-caption #{options.subscription.caption}
+
+          +textField({
+            class: 'with-arrow',
+            name: 'subscription',
+            placeholder: options.subscription.placeholder,
+            inputMode: 'email'
+          })
+
+    // COPYRIGHT AND SOCIAL //
+
+    .footer__copyright-and-social
+      .wrapper.footer__copyright-and-social-wrapper
+
+        .footer__copyright #{options.copyright}
+
+        ul.footer__nets
+          if options.social.twitter
+            li
+              a.footer__net(
+                href= options.social.twitter) <i class="fontello-tw"></i>
+
+          if options.social.facebook
+            li
+              a.footer__net(
+                href= options.social.facebook)  <i class="fontello-fb"></i>
+
+          if options.social.instagram
+            li
+              a.footer__net(
+                href= options.social.instagram)  <i class="fontello-in"></i>

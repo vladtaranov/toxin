@@ -1,6 +1,6 @@
 extends ../../layouts/main/main
 
-include ../../components/buttons/buttons
+include ../../layouts/footer/footer
 include ../../layouts/header/header
 
 block var
@@ -17,24 +17,70 @@ block content
       const navItems = [
         { title: 'Home', href: '#', isActive: true },
         { title: 'About us', href: '#' },
-        { title: 'Services', href: '#', subItems: [
-          { title: 'Single Rooms', href: '#' },
-          { title: 'Double Rooms', href: '#' },
-          { title: 'Apartments', href: '#' }
-          ] },
-        {title: 'Careers', href: '#'},
-        {title: 'News', href: '#'},
-        {title: 'Documentation', href: '#'}
+        {
+          title: 'Services', href: '#', subItems: [
+            { title: 'Single Rooms', href: '#' },
+            { title: 'Double Rooms', href: '#' },
+            { title: 'Apartments', href: '#' }
+          ]
+        },
+        { title: 'Careers', href: '#' },
+        { title: 'News', href: '#' },
+        { title: 'Documentation', href: '#' }
       ]
 
     +header({
-      class: 'headers-and-footers__header',
+      class: 'headers-and-footers__box',
       navItems,
       isAuthorized: false
     })
 
     +header({
-      class: 'headers-and-footers__header',
+      class: 'headers-and-footers__box',
       navItems,
       isAuthorized: true
     })
+
+    +footer({
+      class: 'headers-and-footers__box',
+      aboutUs: `Lorem ipsum dolor sit amet consectetur adipiscing
+        elit aliquam eget nullam pellentesque aliquam curabitur cociis`,
+      navSections: [
+        {
+          title: 'Navigation', items: [
+            {title: 'About us', href: '#'},
+            {title: 'News', href: '#'},
+            {title: 'Support', href: '#'},
+            {title: 'Products', href: '#'}
+          ]
+        },
+        {
+          title: 'About us', items: [
+            {title: 'Who we are', href: '#'},
+            {title: 'Our team', href: '#'},
+            {title: 'Careers', href: '#'},
+            {title: 'Investors', href: '#'}
+          ]
+        },
+        {
+          title: 'Support', items: [
+            {title: 'Documentation', href: '#'},
+            {title: 'Community', href: '#'},
+            {title: 'Get in Touch', href: '#'}
+          ]
+        }
+      ],
+      subscription: {
+        title: 'Subscribe to our newsletter',
+        caption: 'Receive our latest news and promotions in your inbox!',
+        placeholder: 'Your email address'
+      },
+      copyright: 'Copyright © 2018 Toxin UI Kit. All rights reserved',
+      social: {
+        twitter: '#',
+        facebook: '#',
+        instagram: '#'
+      }
+    })
+
+
