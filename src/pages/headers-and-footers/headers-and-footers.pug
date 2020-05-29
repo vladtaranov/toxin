@@ -13,16 +13,28 @@ block header
 block content
   .headers-and-footers__wrapper
 
-    +header({
-      items: [
-        'Home', 'About us', 'Services'
+    -
+      const navItems = [
+        { title: 'Home', href: '#', isActive: true },
+        { title: 'About us', href: '#' },
+        { title: 'Services', href: '#', subItems: [
+          { title: 'Single Rooms', href: '#' },
+          { title: 'Double Rooms', href: '#' },
+          { title: 'Apartments', href: '#' }
+          ] },
+        {title: 'Careers', href: '#'},
+        {title: 'News', href: '#'},
+        {title: 'Documentation', href: '#'}
       ]
+
+    +header({
+      class: 'headers-and-footers__header',
+      navItems,
+      isAuthorized: false
     })
 
-      +buttonSecondary({
-        title: 'Login'
-      })
-
-      +buttonPrimary({
-        title: 'Register'
-      })
+    +header({
+      class: 'headers-and-footers__header',
+      navItems,
+      isAuthorized: true
+    })

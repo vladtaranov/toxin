@@ -1,19 +1,47 @@
+include ../../components/buttons/buttons
+
 mixin header(options)
   .header(
     class= options.class)
 
     .wrapper.header__wrapper
 
-      img.header__logo(
-        src='../../assets/images/logo/logo.svg'
-        alt='')
+      a.header__logo(href= '#')
+        img(
+          src='../../assets/images/logo/logo.svg'
+          alt='')
 
       nav.header__nav
         ul.header__nav-items
-          each item in options.items
-            li.header__nav-item
-              a(href= '/') #{item}
+          each item in options.navItems
+            li
+              a(
+                class= `header__nav-item
+                ${item.isActive && 'is-active'}
+                ${item.subItems && 'with-arrow'}`
+                href= item.href) #{item.title}
 
-      .header__actions
-        block
+              if item.subItems
+                ul.header__nav-subitems
+                  each subItem in item.subItems
+                    li
+                      a.header__nav-subitem(
+                        href= subItem.href) #{subItem.title}
 
+      .header__user
+        if options.isAuthorized
+          .header__user-current
+            a.header__user-name(
+              href='#') Cosmin Negoita
+
+        else
+          +buttonSecondary({
+            class: 'header__user-login',
+            title: 'Login',
+            size: 'small'
+          })
+          +buttonPrimary({
+            class: 'header__user-register',
+            title: 'Register',
+            size: 'small'
+          })
