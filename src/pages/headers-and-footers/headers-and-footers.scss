@@ -4,6 +4,10 @@
 .headers-and-footers {
   background: #e5e5e5;
 
+  &__wrapper {
+    margin: 42px auto 130px auto;
+  }
+
   &__box {
     margin-bottom: 40px;
     box-shadow: 0 10px 20px rgba($colorBlack, .05);

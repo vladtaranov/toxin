@@ -1,6 +1,7 @@
 extends ../../layouts/main/main
 
 include ../../layouts/footer/footer
+include ../../layouts/footer.minimal/footer.minimal.pug
 include ../../layouts/header/header
 
 block var
@@ -41,46 +42,51 @@ block content
       isAuthorized: true
     })
 
-    +footer({
-      class: 'headers-and-footers__box',
-      aboutUs: `Lorem ipsum dolor sit amet consectetur adipiscing
-        elit aliquam eget nullam pellentesque aliquam curabitur cociis`,
-      navSections: [
-        {
-          title: 'Navigation', items: [
-            {title: 'About us', href: '#'},
-            {title: 'News', href: '#'},
-            {title: 'Support', href: '#'},
-            {title: 'Products', href: '#'}
-          ]
+    -
+      const footer = {
+        class: 'headers-and-footers__box',
+        aboutUs: `Lorem ipsum dolor sit amet consectetur adipiscing
+          elit aliquam eget nullam pellentesque aliquam curabitur cociis`,
+        navSections: [
+          {
+            title: 'Navigation', items: [
+              {title: 'About us', href: '#'},
+              {title: 'News', href: '#'},
+              {title: 'Support', href: '#'},
+              {title: 'Products', href: '#'}
+            ]
+          },
+          {
+            title: 'About us', items: [
+              {title: 'Who we are', href: '#'},
+              {title: 'Our team', href: '#'},
+              {title: 'Careers', href: '#'},
+              {title: 'Investors', href: '#'}
+            ]
+          },
+          {
+            title: 'Support', items: [
+              {title: 'Documentation', href: '#'},
+              {title: 'Community', href: '#'},
+              {title: 'Get in Touch', href: '#'}
+            ]
+          }
+        ],
+        subscription: {
+          title: 'Subscribe to our newsletter',
+          caption: 'Receive our latest news and promotions in your inbox!',
+          placeholder: 'Your email address'
         },
-        {
-          title: 'About us', items: [
-            {title: 'Who we are', href: '#'},
-            {title: 'Our team', href: '#'},
-            {title: 'Careers', href: '#'},
-            {title: 'Investors', href: '#'}
-          ]
-        },
-        {
-          title: 'Support', items: [
-            {title: 'Documentation', href: '#'},
-            {title: 'Community', href: '#'},
-            {title: 'Get in Touch', href: '#'}
-          ]
+        copyright: 'Copyright © 2018 Toxin UI Kit. All rights reserved',
+        social: {
+          twitter: '#',
+          facebook: '#',
+          instagram: '#'
         }
-      ],
-      subscription: {
-        title: 'Subscribe to our newsletter',
-        caption: 'Receive our latest news and promotions in your inbox!',
-        placeholder: 'Your email address'
-      },
-      copyright: 'Copyright © 2018 Toxin UI Kit. All rights reserved',
-      social: {
-        twitter: '#',
-        facebook: '#',
-        instagram: '#'
       }
-    })
+
+    +footer(footer)
+
+    +footerMinimal(footer)
 
 

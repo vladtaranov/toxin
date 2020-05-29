@@ -1,0 +1,52 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.footer-minimal {
+  background: white;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    & img {
+      height: 40px;
+    }
+
+    &:hover {
+      opacity: .5;
+      transition: all $standardTransition;
+    }
+  }
+
+  &__about-caption {
+    max-width: 560px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  &__nets {
+    display: flex;
+  }
+
+  &__net {
+    margin: 0 10px;
+    background: $primaryGradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px;
+    line-height: 1;
+
+    &:hover {
+      opacity: .5;
+      transition: all $standardTransition;
+    }
+  }
+}

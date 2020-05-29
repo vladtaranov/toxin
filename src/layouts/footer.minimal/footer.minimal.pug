@@ -1,0 +1,28 @@
+mixin footerMinimal(options)
+  footer.footer-minimal(
+    class= options.class)
+
+    .wrapper.footer-minimal__wrapper
+
+      a.footer-minimal__logo(href= '#')
+        img(
+          src='../../assets/images/logo/logo.svg'
+          alt='')
+
+      .footer-minimal__about-caption #{options.aboutUs}
+
+      ul.footer-minimal__nets
+        if options.social.twitter
+          li
+            a.footer-minimal__net(
+              href= options.social.twitter) <i class="fontello-tw"></i>
+
+        if options.social.facebook
+          li
+            a.footer-minimal__net(
+              href= options.social.facebook)  <i class="fontello-fb"></i>
+
+        if options.social.instagram
+          li
+            a.footer-minimal__net(
+              href= options.social.instagram)  <i class="fontello-in"></i>
