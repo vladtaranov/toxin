@@ -11,37 +11,41 @@ mixin header(options)
           src='../../assets/images/logo/logo.svg'
           alt='')
 
-      nav.header__nav
-        ul.header__nav-items
-          each item in options.navItems
-            li
-              a(
-                class= `header__nav-item
-                ${item.isActive && 'is-active'}
-                ${item.subItems && 'with-arrow'}`
-                href= item.href) #{item.title}
+      .header__menu-icon.icon.js__header-menu-icon
 
-              if item.subItems
-                ul.header__nav-subitems
-                  each subItem in item.subItems
-                    li
-                      a.header__nav-subitem(
-                        href= subItem.href) #{subItem.title}
+      .header__menu.js__header-menu
+        nav.header__nav
+          ul.header__nav-items
+            each item in options.navItems
+              li
+                a(
+                  class= `header__nav-item
+                  ${item.isActive && 'is-active'}
+                  ${item.subItems && 'with-arrow'}`
+                  href= item.href)
+                    span #{item.title}
 
-      .header__user
-        if options.isAuthorized
-          .header__user-current
-            a.header__user-name(
-              href='#') Cosmin Negoita
+                if item.subItems
+                  ul.header__nav-subitems
+                    each subItem in item.subItems
+                      li
+                        a.header__nav-subitem(
+                          href= subItem.href) #{subItem.title}
 
-        else
-          +buttonSecondary({
-            class: 'header__user-login',
-            title: 'Login',
-            size: 'small'
-          })
-          +buttonPrimary({
-            class: 'header__user-register',
-            title: 'Register',
-            size: 'small'
-          })
+        .header__user
+          if options.isAuthorized
+            .header__user-current
+              a.header__user-name(
+                href='#') Cosmin Negoita
+
+          else
+            +buttonSecondary({
+              class: 'header__user-login',
+              title: 'Login',
+              size: 'small'
+            })
+            +buttonPrimary({
+              class: 'header__user-register',
+              title: 'Register',
+              size: 'small'
+            })

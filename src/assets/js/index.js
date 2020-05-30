@@ -6,6 +6,7 @@ import like from '../../components/like/like';
 import pagination from '../../components/pagination/pagination';
 import range from '../../components/range/range';
 
+import header from '../../layouts/header/header';
 import cardGallery from '../../layouts/room-card/room-card';
 
 import cards from '../../pages/cards/cards';
@@ -24,6 +25,7 @@ range.init();
 // LAYOUTS INIT
 
 cardGallery.init();
+header.init();
 
 // PAGES INIT
 
