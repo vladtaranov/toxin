@@ -6,12 +6,13 @@ mixin header(options)
 
     .wrapper.header__wrapper
 
-      a.header__logo(href= '#')
-        img(
-          src='../../assets/images/logo/logo.svg'
-          alt='')
+      .header__logo-and-menu-icon
+        a.header__logo(href= '#')
+          img(
+            src='../../assets/images/logo/logo.svg'
+            alt='')
 
-      .header__menu-icon.icon.js__header-menu-icon
+        .header__menu-icon.icon.js__header-menu-icon
 
       .header__menu.js__header-menu
         nav.header__nav

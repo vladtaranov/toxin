@@ -3,14 +3,17 @@
 
 .header {
   position: relative;
+  z-index: 900;
   width: 100%;
   height: 70px;
   background: white;
 
-  &__wrapper {
+  &__wrapper,
+  &__logo-and-menu-icon {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     height: 100%;
   }
 
