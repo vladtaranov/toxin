@@ -21,6 +21,7 @@ import '../../components/text-field/text-field.scss';
 import '../../components/toggle/toggle.scss';
 
 import '../../layouts/footer/footer.scss';
+import '../../layouts/footer/footer.mobile.scss';
 import '../../layouts/footer.minimal/footer.minimal.scss';
 import '../../layouts/header/header.scss';
 import '../../layouts/header/header.mobile.scss';
