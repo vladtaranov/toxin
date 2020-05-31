@@ -42,11 +42,11 @@ mixin header(options)
           else
             +buttonSecondary({
               class: 'header__user-login',
-              title: 'Login',
+              title: options.login,
               size: 'small'
             })
             +buttonPrimary({
               class: 'header__user-register',
-              title: 'Register',
+              title: options.register,
               size: 'small'
             })
