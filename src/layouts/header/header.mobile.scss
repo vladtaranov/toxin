@@ -1,0 +1,90 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+/* MENU ICON */
+
+.header__menu-icon {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    font-size: 28px;
+    line-height: 1;
+    transition: all $standardTransition;
+  }
+
+  &::before {
+    content: "menu";
+  }
+
+  &::after {
+    content: "close";
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &.is-active {
+    &::before {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &::after {
+      content: "close";
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: $smallDesktopBreakpoint) {
+  .header {
+    &__nav-item {
+      max-width: 70px;
+      margin-left: 15px;
+
+      & span {
+        max-width: 70px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletBreakpoint) {
+  .header {
+    height: 50px;
+
+    &__logo img {
+      height: 34px;
+    }
+
+    &__menu-icon {
+      display: flex;
+    }
+
+    &__menu {
+      position: fixed;
+      z-index: -1;
+      top: -100%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      visibility: hidden;
+      opacity: 0;
+
+      &.is-active {
+        z-index: 900;
+        top: 0;
+        visibility: visible;
+        background: white;
+        opacity: 1;
+        transition: all $standardTransition;
+      }
+    }
+  }
+}

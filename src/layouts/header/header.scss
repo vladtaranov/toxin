@@ -7,10 +7,6 @@
   height: 70px;
   background: white;
 
-  @media screen and (max-width: $tabletBreakpoint) {
-    height: 50px;
-  }
-
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -18,16 +14,14 @@
     height: 100%;
   }
 
+  /* LOGO */
+
   &__logo {
     display: block;
     width: 130px;
 
     & img {
       height: 40px;
-
-      @media screen and (max-width: $tabletBreakpoint) {
-        height: 34px;
-      }
     }
 
     &:hover {
@@ -36,71 +30,11 @@
     }
   }
 
-  &__menu-icon {
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-
-    &::before,
-    &::after {
-      position: absolute;
-      font-size: 28px;
-      line-height: 1;
-      transition: all $standardTransition;
-    }
-
-    &::before {
-      content: "menu";
-    }
-
-    &::after {
-      content: "close";
-      visibility: hidden;
-      opacity: 0;
-    }
-
-    &.is-active {
-      &::before {
-        visibility: hidden;
-        opacity: 0;
-      }
-
-      &::after {
-        content: "close";
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-
-    @media screen and (max-width: $tabletBreakpoint) {
-      display: flex;
-    }
-  }
-
   &__menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     background: white;
-
-    @media screen and (max-width: $tabletBreakpoint) {
-      position: absolute;
-      z-index: -1;
-    }
-
-    &.is-active {
-      z-index: 900;
-      visibility: visible;
-      background: white;
-      opacity: 1;
-      transition: all $standardTransition;
-    }
   }
 
   &__nav {
@@ -140,10 +74,6 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-
-        @media screen and (max-width: $smallDesktopBreakpoint) {
-          max-width: 70px;
-        }
       }
 
       &.with-arrow {
@@ -172,11 +102,6 @@
           color: $colorPurple;
           transition: all $standardTransition;
         }
-      }
-
-      @media screen and (max-width: $smallDesktopBreakpoint) {
-        max-width: 70px;
-        margin-left: 15px;
       }
     }
 
