@@ -3,7 +3,6 @@
 
 .header {
   position: relative;
-  z-index: 900;
   width: 100%;
   height: 70px;
   background: white;
@@ -56,7 +55,7 @@
 
         &:hover {
           .header__nav-subitems {
-            z-index: 900;
+            z-index: 910;
             visibility: visible;
             opacity: 1;
             transition: all $standardTransition;
