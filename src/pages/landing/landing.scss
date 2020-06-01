@@ -4,6 +4,10 @@
 .landing {
   padding: 70px 0 0 0;
 
+  @media screen and (max-width: $tabletBreakpoint) {
+    padding: 50px 0 0 0;
+  }
+
   &__header {
     position: fixed;
     z-index: 800;
@@ -14,9 +18,9 @@
   }
 
   &__cover {
-    height: 830px;
-    padding: 70px 0 18px 0;
-    background: url("../../assets/images/backgrounds/1-min.jpg") no-repeat center;
+    height: 57.63vw;
+    padding: 70px 0 23px 0;
+    background: url("../../assets/images/backgrounds/1-min.jpg") no-repeat bottom;
     background-size: 100%;
 
     & [class$="wrapper"] {
@@ -24,6 +28,11 @@
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
+    }
+
+    @media screen and (max-width: $tabletBreakpoint) {
+      height: calc(100vh - 50px);
+      background-size: auto 100%;
     }
   }
 
@@ -38,6 +47,10 @@
     box-shadow: 0 0 25px rgba(black, .2);
     border: 1px solid rgba(black, .12);
     border-radius: 4px;
+
+    @media screen and (max-width: $mobileBreakpoint) {
+      max-width: 100%;
+    }
   }
 
   &__footer {
