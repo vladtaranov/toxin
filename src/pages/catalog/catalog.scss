@@ -21,6 +21,8 @@
 
   &__filters {
     width: 23%;
+    min-width: 260px;
+    margin-right: 58px;
   }
 
   &__dates {
@@ -52,7 +54,7 @@
   }
 
   &__search-result {
-    width: 72%;
+    flex: 1;
   }
 
   &__items {

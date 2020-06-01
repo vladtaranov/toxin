@@ -39,6 +39,7 @@ import '../../pages/form-elements/form-elements.scss';
 import '../../pages/headers-and-footers/headers-and-footers.scss';
 
 import '../../pages/catalog/catalog.scss';
+import '../../pages/catalog/catalog.mobile.scss';
 import '../../pages/landing/landing.scss';
 import '../../pages/login/login.scss';
 import '../../pages/register/register.scss';
