@@ -68,7 +68,7 @@ module.exports = (env) => {
       filename: isProduction
         ? `./${PATHS.assets}/js/main-[hash:5].js`
         : undefined,
-      publicPath: '/'
+      publicPath: '/toxin/'
     },
     devServer: {
       contentBase: Path.join(__dirname, PATHS.dev),
