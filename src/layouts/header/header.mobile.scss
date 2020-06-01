@@ -52,6 +52,14 @@
         max-width: 70px;
       }
     }
+
+    &__user-login,
+    &__user-register {
+      overflow: hidden;
+      max-width: 150px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 }
 
@@ -147,6 +155,7 @@
     &__user-login,
     &__user-register {
       width: 100%;
+      max-width: 100%;
       margin: 0 0 20px 0;
 
       & * {
