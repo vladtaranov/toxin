@@ -6,11 +6,11 @@ include ../../layouts/sign-up/sign-up
 
 block var
   - var pageTitle = 'Toxin Hotel | Sign Up'
-  - var bodyStyle = 'sign-up-page'
+  - var bodyStyle = 'register'
 
 block header
   +header({
-    class: 'sign-up-page__header',
+    class: 'register__header',
     navItems: [
       { title: 'О нас', href: '#' },
       {
@@ -36,17 +36,17 @@ block header
   })
 
 block content
-  .sign-up-page__cover
-    .wrapper.sign-up-page__wrapper
+  .register__cover
+    .wrapper.register__wrapper
       +signUp({
         formName: 'sign-up',
         action: '#',
-        class: 'sign-up-page__form'
+        class: 'register__form'
       })
 
 block footer
   +footer({
-    class: 'sign-up-page__footer',
+    class: 'register__footer',
     aboutUs: `Бронирование номеров в лучшем отеле 2019 года
       по версии ассоциации «Отельные взгляды»`,
     navSections: [
