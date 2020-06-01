@@ -28,21 +28,30 @@
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        height: auto;
+        min-height: calc(100vh - 110px);
+      }
     }
 
     @media screen and (max-width: $tabletBreakpoint) {
-      height: calc(100vh - 50px);
+      height: auto;
+      min-height: calc(100vh - 50px);
       background-size: auto 100%;
+      padding: 30px 0;
     }
   }
 
   &__cover-caption {
     align-self: flex-end;
     width: 300px;
+    margin: 30px 0 0 0;
     text-align: right;
   }
 
   &__search-room {
+    width: 100%;
     max-width: 380px;
     box-shadow: 0 0 25px rgba(black, .2);
     border: 1px solid rgba(black, .12);
