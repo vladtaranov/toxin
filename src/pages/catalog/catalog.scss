@@ -1,0 +1,96 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.catalog {
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  &__title {
+    margin-bottom: 21px;
+  }
+
+  &__subtitle {
+    margin-bottom: 15px;
+  }
+
+  &__filters {
+    width: 23%;
+  }
+
+  &__dates {
+    margin-bottom: 20px;
+  }
+
+  &__visitors {
+    margin-bottom: 30px;
+  }
+
+  &__checkboxes {
+    margin-bottom: 30px;
+  }
+
+  &__checkbox {
+    margin-bottom: 5px;
+  }
+
+  &__availabilities {
+    margin-bottom: 30px;
+  }
+
+  &__availability {
+    margin-bottom: 10px;
+  }
+
+  &__services {
+    margin-bottom: 25px;
+  }
+
+  &__search-result {
+    width: 72%;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: calc(100% / 3 - 8px);
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
+    border-radius: 4px;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0 20px 0;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: $colorDark5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: $colorDark25;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: $colorDark50;
+      transition: all $standardTransition;
+    }
+  }
+}

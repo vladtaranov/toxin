@@ -1,0 +1,209 @@
+extends ../../layouts/main/main
+
+include ../../components/calendar/calendar
+include ../../components/checkbox/checkbox
+include ../../components/checkbox.rich/checkbox.rich.pug
+include ../../components/details/details
+include ../../components/dropdown/dropdown
+include ../../components/dropdown.dates-filter/dropdown.dates-filter.pug
+include ../../components/pagination/pagination
+
+include ../../layouts/room-card/room-card
+include ../../layouts/sign-in/sign-in
+
+block var
+  - const pageTitle = 'Toxin Hotel | Search Room'
+  - const bodyStyle = 'catalog'
+
+block content
+  .wrapper.catalog__wrapper
+    .catalog__filters
+
+      // DATES //
+
+      +dropdownDatesFilter({
+        class: 'catalog__dates',
+        calendarName: 'dates',
+        title: 'Даты пребывания в отеле',
+        placeholder: 'Выберите даты'
+      })
+
+        +calendar({
+          name: 'dates',
+          class: 'dd-dates-filter__calendar',
+          start: '2020-5-19',
+          end: '2020-5-23'
+        })
+
+      // VISITORS //
+
+      +dropdown({
+        class: 'catalog__visitors',
+        name: 'visitors',
+        title: 'Гости',
+        placeholder: 'Сколько гостей',
+        values: [
+          {name: 'adults', title: 'Взрослые', value: 3},
+          {name: 'children', title: 'Дети', value: 0},
+          {name: 'infants', title: 'Младенцы', value: 1}
+        ],
+        sumMode: 'all',
+        wordForms: 'гость, гостя, гостей',
+        hasButtons: true
+      })
+
+      // CHECKBOXES //
+
+      h3.catalog__subtitle.heading.heading--level3 Checkbox Buttons
+
+      -
+        const checkboxes = [
+        { name: 'checkboxes', value: 'smoking', title: 'Можно курить' },
+        { name: 'checkboxes', value: 'pets', title: 'Можно с питомцами', isChecked: true },
+        { name: 'checkboxes', value: 'visitors',
+        title: 'Можно пригласить гостей (до 10 человек)', isChecked: true }
+        ]
+
+      .catalog__checkboxes
+        each checkbox in checkboxes
+          +checkbox({
+            class: 'catalog__checkbox',
+            name: checkbox.name,
+            value: checkbox.value,
+            title: checkbox.title,
+            isChecked: checkbox.isChecked
+          })
+
+      // AVAILABILITY //
+
+      h3.catalog__subtitle.heading.heading--level3 Доступность
+
+        -
+          const availabilities = [
+          { name: 'rich-checkboxes', value: 'wide-corridor',
+          title: 'Широкий коридор',
+          caption: 'Ширина коридоров в номере не менее 91 см', isChecked: false },
+          { name: 'rich-checkboxes', value: 'disabled-assistant',
+          title: 'Помощник для инвалидов',
+          caption: 'На 1 этаже вас встретит специалист и проводит до номера', isChecked: false }
+          ]
+
+      .catalog__availabilities
+        each item in availabilities
+          +checkboxRich({
+            class: 'catalog__availability',
+            name: item.name,
+            value: item.value,
+            title: item.title,
+            caption: item.caption,
+            isChecked: item.isChecked
+          })
+
+      // SERVICES //
+
+      +dropdown({
+        class: 'catalog__services',
+        name: 'serviced',
+        title: 'Удобства',
+        placeholder: 'Выберите удобства',
+        values: [
+          {
+            name: 'bedrooms', title: 'Спальни',
+            wordForms: 'спальня, спальни, спален', value: 2
+          },
+          {
+            name: 'beds', title: 'Кровати',
+            wordForms: 'кровать, кровати, кроватей', value: 2
+          },
+          {
+            name: 'bathrooms', title: 'Ванные комнаты',
+            wordForms: 'ванная комната, ванные комнаты, ванных комнат', value: 0
+          }
+        ],
+        sumMode: 'byCategory'
+      })
+
+      // ADDITIONAL SERVICES //
+
+      -
+        const additionalServices = [
+        { name: 'services', value: 'breakfast', title: 'Завтрак' },
+        { name: 'services', value: 'writing-table', title: 'Письменный стол', isChecked: true },
+        { name: 'services', value: 'feeding-chair', title: 'Стул для кормления', isChecked: true },
+        { name: 'services', value: 'crib', title: 'Кроватка', isChecked: true },
+        { name: 'services', value: 'tv', title: 'Телевизор' },
+        { name: 'services', value: 'shampoo', title: 'Шампунь' }
+        ]
+
+      +details({
+        title: 'Дополнительные удобства'
+      })
+
+        each service in additionalServices
+          +checkbox({
+            class: 'catalog__checkbox',
+            name: service.name,
+            value: service.value,
+            title: service.title,
+            isChecked: service.isChecked
+          })
+
+
+
+    .catalog__search-result
+      .catalog__title.heading.heading--level1
+        | Номера, которые мы для вас подобрали
+
+      .catalog__items
+        -
+          const getImagesPaths = (arr) => {
+            return arr.map(
+              (item) => `../../assets/images/rooms/${item}-min.jpg`);
+          }
+          const rooms = [
+            { images: [1, 3, 6, 8], roomNumber: 888, isLux: true,
+              price: 9990, reviewsCount: 145 },
+            { images: [2, 6, 9, 12], roomNumber: 840, rate: 4,
+            price: 9900, reviewsCount: 65 },
+            { images: [3, 1, 7, 11], roomNumber: 980, isLux: true, rate: 3,
+            price: 8500, reviewsCount: 35 },
+            { images: [4, 2, 3, 8], roomNumber: 856,
+            price: 7300, reviewsCount: 19 },
+            { images: [5, 9, 10, 1], roomNumber: 740, rate: 4,
+            price: 6000, reviewsCount: 44 },
+            { images: [6, 4, 7, 10], roomNumber: 982, rate: 3,
+            price: 5800, reviewsCount: 56 },
+            { images: [7, 3, 4, 12], roomNumber: 678,
+            price: 8500, reviewsCount: 45 },
+            { images: [8, 4, 5, 1], roomNumber: 450, rate: 4,
+            price: 8500, reviewsCount: 39 },
+            { images: [9, 12, 6, 5], roomNumber: 350, rate: 3,
+            price: 8500, reviewsCount: 77 },
+            { images: [10, 5, 8, 11], roomNumber: 666,
+            price: 8500, reviewsCount: 25 },
+            { images: [11, 4, 6, 3], roomNumber: 444, rate: 3,
+            price: 8500, reviewsCount: 15 },
+            { images: [12, 1, 7, 4], roomNumber: 352, rate: 3,
+            price: 8500, reviewsCount: 55 }
+          ]
+
+        each room in rooms
+          +roomCard({
+            class: 'catalog__item',
+            href: '#',
+            images: getImagesPaths(room.images),
+            roomNumber: room.roomNumber,
+            isLux: room.isLux,
+            price: room.price,
+            rate: room.rate,
+            reviewsCount: room.reviewsCount
+          })
+
+      .catalog__pagination
+        +pagination({
+          name: 'pagination',
+          itemsCount: 172,
+          itemsOnPage: 12,
+          currentPage: 1,
+          wordForms: 'варианта аренды, вариантов аренды, вариантов аренды'
+        })
