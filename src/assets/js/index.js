@@ -25,7 +25,9 @@ range.init();
 // LAYOUTS INIT
 
 cardGallery.init();
-header.init();
+if (!location.pathname.split('/').includes('headers-and-footers.html')) {
+  header.init();
+}
 
 // PAGES INIT
 
