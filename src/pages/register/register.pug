@@ -1,39 +1,10 @@
 extends ../../layouts/main/main
 
-include ../../layouts/footer/footer
-include ../../layouts/header/header
 include ../../layouts/sign-up/sign-up
 
 block var
   - var pageTitle = 'Toxin Hotel | Sign Up'
   - var bodyStyle = 'register'
-
-block header
-  +header({
-    class: 'register__header',
-    navItems: [
-      { title: 'О нас', href: '#' },
-      {
-        title: 'Услуги', href: '#', subItems: [
-          { title: 'Одиночные номера', href: '#' },
-          { title: 'Двуместные номера', href: '#' },
-          { title: 'Апартаменты', href: '#' },
-          { title: 'Ресторан', href: '#' }
-        ]
-      },
-      { title: 'Вакансии', href: '#' },
-      { title: 'Новости', href: '#' },
-      {
-        title: 'Соглашения', href: '#', subItems: [
-          { title: 'Условия обслуживания', href: '#' },
-          { title: 'Договор', href: '#' }
-        ]
-      },
-    ],
-    isAuthorized: false,
-    login: 'Войти',
-    register: 'Зарегистрироваться'
-  })
 
 block content
   .register__cover
@@ -43,46 +14,3 @@ block content
         action: '#',
         class: 'register__form'
       })
-
-block footer
-  +footer({
-    class: 'register__footer',
-    aboutUs: `Бронирование номеров в лучшем отеле 2019 года
-      по версии ассоциации «Отельные взгляды»`,
-    navSections: [
-      {
-        title: 'Навигация', items: [
-          { title: 'О нас', href: '#' },
-          { title: 'Новости', href: '#' },
-          { title: 'Служба поддержки', href: '#' },
-          { title: 'Услуги', href: '#' }
-        ]
-      },
-      {
-        title: 'О нас', items: [
-          { title: 'О сервисе', href: '#' },
-          { title: 'Наша команда', href: '#' },
-          { title: 'Вакансии', href: '#' },
-          { title: 'Инвесторы', href: '#' }
-        ]
-      },
-      {
-        title: 'Служба поддержки', items: [
-          { title: 'Соглашения', href: '#' },
-          { title: 'Сообщество', href: '#' },
-          { title: 'Связь с нами', href: '#' }
-        ]
-      }
-    ],
-    subscription: {
-      title: 'Подписка',
-      caption: 'Получайте специальные предложения и новости сервиса',
-      placeholder: 'Email'
-    },
-    copyright: 'Copyright © 2018 Toxin Отель. Все права защищены',
-    social: {
-      twitter: '#',
-      facebook: '#',
-      instagram: '#'
-    }
-  })

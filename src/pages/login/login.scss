@@ -2,21 +2,6 @@
 @import "../../assets/style/mixins";
 
 .login {
-  padding: 70px 0 0 0;
-
-  @media screen and (max-width: $tabletBreakpoint) {
-    padding: 50px 0 0 0;
-  }
-
-  &__header {
-    position: fixed;
-    z-index: 800;
-    top: 0;
-    right: 0;
-    left: 0;
-    border-bottom: 1px solid rgba(31, 32, 65, .1);
-  }
-
   &__cover {
     display: flex;
     justify-content: center;
@@ -51,9 +36,5 @@
     @media screen and (max-width: $mobileBreakpoint) {
       width: 100%;
     }
-  }
-
-  &__footer {
-    border-top: 1px solid rgba(31, 32, 65, .1);
   }
 }
