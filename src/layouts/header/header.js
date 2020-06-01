@@ -6,8 +6,8 @@ const onMenuIconClick = () => {
 };
 
 const init = () => {
-  document.querySelector('.js__header-menu-icon')
-    .addEventListener('click', onMenuIconClick);
+  const menuIcon = document.querySelector('.js__header-menu-icon');
+  if (menuIcon) menuIcon.addEventListener('click', onMenuIconClick);
 };
 
 export default {
