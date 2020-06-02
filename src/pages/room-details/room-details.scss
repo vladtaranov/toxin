@@ -6,11 +6,177 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-top: 30px;
-    padding-bottom: 50px;
+    padding-top: 70px;
+    padding-bottom: 65px;
   }
 
-  &__cover {
+  &__title {
+    margin-bottom: 20px;
+  }
 
+  /* COVER */
+
+  &__cover {
+    display: flex;
+    width: 100%;
+    height: 33.7vw;
+  }
+
+  &__primary-photo {
+    height: 100%;
+  }
+
+  &__another-photo {
+    height: 50%;
+  }
+
+  /* INFO */
+
+  &__info {
+    width: calc(100% - 450px);
+  }
+
+  &__advantages-and-rates {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__advantages {
+    width: 40%;
+    margin-bottom: 15px;
+  }
+
+  &__rates {
+    width: 49%;
+    margin-bottom: 20px;
+  }
+
+  &__advantage {
+    display: flex;
+    align-items: center;
+    min-height: 88px;
+    padding: 5px 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(black, .1);
+    }
+  }
+
+  &__chart-and-legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__chart {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+
+    &-circle {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &-count,
+    &-caption {
+      color: $colorPurple;
+    }
+  }
+
+  &__legend {
+    width: calc(100% - 150px);
+
+    &-awesome,
+    &-good,
+    &-passably,
+    &-dissapointed {
+      position: relative;
+      padding-left: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: calc(50% - 5px);
+        left: 0;
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+      }
+    }
+
+    &-awesome::before {
+      background: linear-gradient(180deg, #ffba9c, #ffe39c);
+    }
+
+    &-good::before {
+      background: $secondaryGradient;
+    }
+
+    &-passably::before {
+      background: $primaryGradient;
+    }
+
+    &-dissapointed::before {
+      background: linear-gradient(180deg, #424e76, #88898d);
+    }
+  }
+
+  &__reviews {
+    margin-bottom: 34px;
+
+    &-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-count {
+      font-size: 14px;
+      line-height: 1;
+      color: $colorDark50;
+    }
+  }
+
+  &__review {
+    margin-bottom: 22px;
+  }
+
+  &__rules-and-cancel {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__rules {
+    width: 40%;
+
+    &-title {
+      margin-left: 20px;
+    }
+  }
+
+  &__cancel {
+    width: 49%;
+  }
+
+  /* ORDER ROOM */
+
+  &__order-room {
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 0 25px rgba(black, .2);
+    border: 1px solid rgba(black, .12);
+    border-radius: 4px;
   }
 }

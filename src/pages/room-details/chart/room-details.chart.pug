@@ -1,0 +1,66 @@
+svg.room-details__chart-circle(
+  width=120
+  height=120)
+
+  defs
+    linearGradient#backgroundGradient(
+      gradientTransform='rotate(180)')
+      stop(
+        stop-color='#ffba9c'
+        offset='0%')
+      stop(
+        stop-color='#ffe39c'
+        offset='100%')
+
+    linearGradient#primaryGradient(
+      gradientTransform='rotate(180)')
+      stop(
+        stop-color='#90a3fa'
+        offset='0%')
+      stop(
+        stop-color='#b59dfe'
+        offset='100%')
+
+    linearGradient#secondaryGradient(
+      gradientTransform='rotate(180)')
+      stop(
+        stop-color='#6ecfa1'
+        offset='0%')
+      stop(
+        stop-color='#67d2e2'
+        offset='100%')
+
+  circle(
+    cx=60
+    cy=60
+    r=58
+    fill='transparent'
+    stroke='url(#backgroundGradient)'
+    stroke-width=4)
+
+  circle(
+    cx=60
+    cy=60
+    r=58
+    fill='transparent'
+    stroke='url(#primaryGradient)'
+    stroke-width=4
+    stroke-dasharray='0 274 86')
+
+  circle(
+    cx=60
+    cy=60
+    r=58
+    fill='transparent'
+    stroke='url(#secondaryGradient)'
+    stroke-width=4
+    stroke-dasharray='0 1 89 272')
+
+  circle(
+    cx=60
+    cy=60
+    r=58
+    fill='transparent'
+    stroke='white'
+    stroke-width=4
+    stroke-dasharray='1 89 2 180 2 89 2')

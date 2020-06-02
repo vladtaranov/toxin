@@ -1,13 +1,134 @@
 extends ../../layouts/main/main
 
+include ../../components/advantage/advantage
+include ../../components/review/review
+
+include ../../layouts/order-room/order-room
+
 block var
   - const pageTitle = 'Toxin Hotel | Room Details'
   - const bodyStyle = 'room-details'
 
 block content
   .room-details__cover
-    img.room-details__cover-image1
+    img.room-details__primary-photo(
+      src='../../assets/images/rooms/15-min.jpg'
+      alt='')
+    .room-details__another-photos
+      img.room-details__another-photo(
+        src='../../assets/images/rooms/14-min.jpg'
+        alt='')
+      img.room-details__another-photo(
+        src='../../assets/images/rooms/13-min.jpg'
+        alt='')
 
-  .wrapper.catalog__wrapper
+  .wrapper.room-details__wrapper
+    .room-details__info
 
+      // ADVANTAGES & RATES //
 
+      .room-details__advantages-and-rates
+        section.room-details__advantages
+          h2.heading.heading--level2 Сведения о&nbsp;номере
+
+          +advantage({
+            class: 'room-details__advantage',
+            icon: 'face',
+            title: 'Комфорт',
+            caption: 'Шумопоглащающие стены'
+          })
+
+          +advantage({
+            class: 'room-details__advantage',
+            icon: 'city',
+            title: 'Удобство',
+            caption: 'Окно в каждой из спален'
+          })
+
+          +advantage({
+            class: 'room-details__advantage',
+            icon: 'fire',
+            title: 'Уют',
+            caption: 'Номер освещён камином'
+          })
+
+        section.room-details__rates
+          h2.room-details__title.heading.heading--level2 Впечатления от&nbsp;номера
+
+          .room-details__chart-and-legend
+            .room-details__chart
+              include ./chart/room-details.chart.pug
+              .room-details__chart-count.heading.heading--level1 260
+              .room-details__chart-caption.heading.heading--level3 голосов
+
+            .room-details__legend
+              ul
+                li.room-details__legend-awesome Великолепно
+                li.room-details__legend-good Хорошо
+                li.room-details__legend-passably Удовлетворительно
+                li.room-details__legend-dissapointed Разочарован
+
+      // REVIEWS //
+
+      section.room-details__reviews
+        .room-details__reviews-heading.room-details__title
+          h2.heading.heading--level2 Отзывы посетителей номера
+          .room-details__reviews-count 2&nbsp;отзыва
+
+        +review({
+          class: 'room-details__review',
+          id: 1,
+          name: 'Мурад Сарафанов',
+          date: '5 дней назад',
+          photo: '../../assets/images/reviews/murad.jpg',
+          text: `Великолепный матрас на кровате в основной спальне! А пуфик вообще потрясающий.
+            И стены действительно шумоподавляющие. Выкрикивал комплименты повару -
+            никто не жаловался из соседей`,
+          likesCount: 12,
+          isLiked: 'true'
+        })
+
+        +review({
+          class: 'room-details__review',
+          id: 2,
+          name: 'Патрисия Стёклышкова',
+          date: 'Неделю назад',
+          photo: '../../assets/images/reviews/patricia.jpg',
+          text: `Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать,
+            каждый день новое блюдо и десерт как комплимент`,
+          likesCount: 2
+        })
+
+      // RULES & CANCEL
+
+      .room-details__rules-and-cancel
+        section.room-details__rules
+          h2.room-details__title.room-details__rules-title.heading.heading--level2 Правила
+
+          ul.list
+            li Нельзя с&nbsp;питомцами
+            li Без&nbsp;вечеринок и&nbsp;мероприятий
+            li Время прибытия&nbsp;&mdash; после 13:00, выезд&nbsp;&mdash; до&nbsp;12:00
+
+        section.room-details__cancel
+          h2.room-details__title.heading.heading--level2 Отмена
+
+          p.paragraph
+            | Бесплатная отмена в&nbsp;течение 48&nbsp;ч. После этого
+            | при отмене не&nbsp;позднее чем за&nbsp;5&nbsp;дн. до&nbsp;прибытия
+            | вы получите полный возврат за&nbsp;вычетом сбора за&nbsp;услуги
+
+    // ORDER ROOM //
+
+    +orderRoom({
+      formName: 'order-room',
+      action: '#',
+      class: 'room-details__order-room',
+      startDate: '2020-5-19',
+      endDate: '2020-5-23',
+      visitors: [
+        {name: 'adults', title: 'Взрослые', value: 2},
+        {name: 'children', title: 'Дети', value: 1},
+        {name: 'infants', title: 'Младенцы', value: 0}
+      ]
+    })
