@@ -1,0 +1,16 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+.room-details {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  &__cover {
+
+  }
+}

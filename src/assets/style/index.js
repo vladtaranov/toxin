@@ -43,3 +43,4 @@ import '../../pages/catalog/catalog.mobile.scss';
 import '../../pages/landing/landing.scss';
 import '../../pages/login/login.scss';
 import '../../pages/register/register.scss';
+import '../../pages/room-details/room-details.scss';
