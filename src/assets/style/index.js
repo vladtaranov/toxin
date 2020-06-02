@@ -44,3 +44,4 @@ import '../../pages/landing/landing.scss';
 import '../../pages/login/login.scss';
 import '../../pages/register/register.scss';
 import '../../pages/room-details/room-details.scss';
+import '../../pages/room-details/room-details.mobile.scss';

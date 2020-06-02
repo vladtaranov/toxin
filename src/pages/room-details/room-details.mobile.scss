@@ -1,0 +1,83 @@
+@import "../../assets/style/constants";
+@import "../../assets/style/mixins";
+
+@media screen and (max-width: $tabletBreakpoint + 200px) {
+  .room-details {
+    &__wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__info,
+    &__order-room {
+      width: 100%;
+    }
+
+    &__info {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: $tabletBreakpoint) {
+  .room-details {
+    &__cover {
+      flex-direction: column;
+      height: auto;
+    }
+
+    &__primary-photo {
+      height: auto;
+    }
+
+    &__another-photos {
+      display: flex;
+    }
+
+    &__another-photo {
+      width: 50%;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (max-width: $mobileBreakpoint) {
+  .room-details {
+    &__wrapper {
+      padding-top: 30px;
+    }
+
+    &__info {
+      margin-bottom: 10px;
+    }
+
+    &__advantages-and-rates,
+    &__rules-and-cancel {
+      flex-direction: column;
+    }
+
+    &__advantages,
+    &__rates,
+    &__rules,
+    &__cancel {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    &__rates {
+      margin-bottom: 50px;
+    }
+
+    &__rules-title {
+      margin-left: 0;
+    }
+
+    &__reviews-count {
+      margin-left: 10px;
+    }
+
+    &__order-room {
+      max-width: 100%;
+    }
+  }
+}
