@@ -19,7 +19,7 @@
 - [Cards](https://vladtaranov.github.io/toxin/cards.html)
 - [Form Elements](https://vladtaranov.github.io/toxin/form-elements.html)
 - [Headers & Footers](https://vladtaranov.github.io/toxin/headers-and-footers.html)
-- [Colors & Types](https://vladtaranov.github.io/toxin/colors-and-types.html)
+- [Colors & Type](https://vladtaranov.github.io/toxin/colors-and-type.html)
 
 #### Стек
 * Pug
