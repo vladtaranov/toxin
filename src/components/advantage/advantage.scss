@@ -27,6 +27,10 @@
     &--city::before {
       content: "location_city";
     }
+
+    &--fire::before {
+      content: "whatshot";
+    }
   }
 
   &__description {
