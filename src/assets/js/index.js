@@ -7,6 +7,7 @@ import pagination from '../../components/pagination/pagination';
 import range from '../../components/range/range';
 
 import header from '../../layouts/header/header';
+import main from '../../layouts/main/main';
 import cardGallery from '../../layouts/room-card/room-card';
 
 import cards from '../../pages/cards/cards';
@@ -24,6 +25,7 @@ range.init();
 
 // LAYOUTS INIT
 
+main.init();
 cardGallery.init();
 if (!location.pathname.split('/').includes('headers-and-footers.html')) {
   header.init();

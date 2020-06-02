@@ -10,7 +10,11 @@ html(lang='ru')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title #{pageTitle}
 
-  body(class= `main ${bodyStyle}`)
+  body(class= `main is-inactive ${bodyStyle}`)
+    .main__loader.js__loader
+      .main__loader-icon
+        include ../../components/spinner/spinner
+
     header
       +header({
         class: 'main__header',

@@ -17,6 +17,7 @@ import '../../components/radio/radio.scss';
 import '../../components/range/range.scss';
 import '../../components/rate/rate.scss';
 import '../../components/review/review.scss';
+import '../../components/spinner/spinner.scss';
 import '../../components/text-field/text-field.scss';
 import '../../components/toggle/toggle.scss';
 
