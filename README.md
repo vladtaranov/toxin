@@ -8,20 +8,20 @@
 Макет сервиса бронирования гостиничных номеров находится [здесь](https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/FSD-frontend-education-program.-The-2nd-task?node-id=18370%3A2). 
 Задание выполнено в мае-июне 2020 г.
 
-##### Страницы
+#### Страницы
 - [Landing](https://vladtaranov.github.io/toxin/landing.html)
 - [Sign Up](https://vladtaranov.github.io/toxin/register.html)
 - [Sign In](https://vladtaranov.github.io/toxin/login.html)
 - [Search Rooms](https://vladtaranov.github.io/toxin/catalog.html)
 - [Room Details](https://vladtaranov.github.io/toxin/room-details.html)
 
-##### UI Kit
+#### UI Kit
 - [Cards](https://vladtaranov.github.io/toxin/cards.html)
 - [Form Elements](https://vladtaranov.github.io/toxin/form-elements.html)
 - [Headers & Footers](https://vladtaranov.github.io/toxin/headers-and-footers.html)
 - [Colors & Types](https://vladtaranov.github.io/toxin/colors-and-types.html)
 
-##### Стек
+#### Стек
 * Pug
 * SCSS
 * Webpack
@@ -29,11 +29,11 @@
 * ES6+
 * SemiStandard, ESLint, Stylelint
 
-##### npm scripts
+#### npm scripts
 * ```npm run watch``` — запускаем webpack-dev-server
 * ```npm run build``` — билдим
 
-##### Особенности выполненного задания
+#### Особенности выполненного задания
 * Самостоятельно настроенный Webpack
 * Деплой через Travis
 * Pixel Perfect
