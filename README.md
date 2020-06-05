@@ -8,6 +8,8 @@
 Макет сервиса бронирования гостиничных номеров находится [здесь](https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/FSD-frontend-education-program.-The-2nd-task?node-id=18370%3A2). 
 Задание выполнено в мае-июне 2020 г.
 
+---
+
 #### Страницы
 - [Landing](https://vladtaranov.github.io/toxin/landing.html)
 - [Sign Up](https://vladtaranov.github.io/toxin/register.html)
@@ -20,6 +22,8 @@
 - [Form Elements](https://vladtaranov.github.io/toxin/form-elements.html)
 - [Headers & Footers](https://vladtaranov.github.io/toxin/headers-and-footers.html)
 - [Colors & Type](https://vladtaranov.github.io/toxin/colors-and-type.html)
+
+---
 
 #### Стек
 * Pug
