@@ -1,9 +1,7 @@
-# Fullstack Development Test Task
+# Toxin UI
 
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/standard/semistandard)
 [![Build Status](https://travis-ci.com/vladtaranov/toxin.svg?branch=master)](https://travis-ci.com/vladtaranov/toxin)
-
-#### The Task - compose UI system by layouts
 
 The layouts locate [here](https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/FSD-frontend-education-program.-The-2nd-task?node-id=18370%3A2). 
 
